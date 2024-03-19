@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  
+  <!-- Project -->
+  <PropertyGroup Label="project">
+    <TargetFrameworks>netstandard2.1</TargetFrameworks>
+    <LangVersion>12</LangVersion>
+    <Nullable>enable</Nullable>
+
+    <AssemblyName>OwlDomain.Common.Throw.Base</AssemblyName>
+    <RootNamespace>OwlDomain.Common</RootNamespace>
+
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+
+  <!-- Nuget package -->
+  <PropertyGroup Label="nuget">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <Title>OwlDomain.Common.Throw.Base</Title>
+    <Description>A package that contains the base functionality for an easily extensible throw-helper utility.</Description>
+    <PackageTags>owldomain, throwing, throw-helper</PackageTags>
+
+    <Version>1.0.0</Version>
+
+    <Authors>Owl Domain, Nightowl</Authors>
+    <Company>OwlDomain</Company>
+
+    <PackageProjectUrl>https://github.com/Owl-Domain/Common.Throw</PackageProjectUrl>
+  </PropertyGroup>
+
+  <!-- Repository -->
+  <PropertyGroup Label="repository">
+    <RepositoryType>git</RepositoryType>
+    <RepositoryBranch>master</RepositoryBranch>
+    <RepositoryUrl>https://github.com/Owl-Domain/Common.Throw</RepositoryUrl>
+  </PropertyGroup>
+  
+</Project>

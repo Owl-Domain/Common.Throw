@@ -13,6 +13,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{D5601A2A-5
 		..\.gitignore = ..\.gitignore
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "base", "base", "{DE395C3C-BFCF-46FB-B6DD-3DDD5A558791}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Throw.Base", "base\Throw.Base\Throw.Base.csproj", "{3FDCBB78-F342-4A13-85D8-37364E9BB979}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "exceptions", "exceptions", "{0E999565-48C5-4095-9C7F-AB0277D6F80B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Throw", "exceptions\Throw\Throw.csproj", "{5D52479F-A176-4B52-AA79-C70562C9A091}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,11 +31,24 @@ Global
 		{B9D5CBD8-7F6E-4E41-8B31-1BBBA972BC70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9D5CBD8-7F6E-4E41-8B31-1BBBA972BC70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9D5CBD8-7F6E-4E41-8B31-1BBBA972BC70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FDCBB78-F342-4A13-85D8-37364E9BB979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FDCBB78-F342-4A13-85D8-37364E9BB979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FDCBB78-F342-4A13-85D8-37364E9BB979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FDCBB78-F342-4A13-85D8-37364E9BB979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D52479F-A176-4B52-AA79-C70562C9A091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D52479F-A176-4B52-AA79-C70562C9A091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D52479F-A176-4B52-AA79-C70562C9A091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D52479F-A176-4B52-AA79-C70562C9A091}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B9D5CBD8-7F6E-4E41-8B31-1BBBA972BC70} = {9A25597F-F87D-41F8-A8A7-3F1A35CC3044}
+		{3FDCBB78-F342-4A13-85D8-37364E9BB979} = {DE395C3C-BFCF-46FB-B6DD-3DDD5A558791}
+		{5D52479F-A176-4B52-AA79-C70562C9A091} = {0E999565-48C5-4095-9C7F-AB0277D6F80B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3383300-5067-41EC-816E-0331007F151E}
 	EndGlobalSection
 EndGlobal
