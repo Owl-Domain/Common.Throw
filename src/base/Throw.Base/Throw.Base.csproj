@@ -29,8 +29,14 @@
     <Authors>Owl Domain, Nightowl</Authors>
     <Company>OwlDomain</Company>
 
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/Owl-Domain/Common.Throw</PackageProjectUrl>
   </PropertyGroup>
+
+  <!-- Readme -->
+  <ItemGroup Label="readme">
+    <None Include="readme.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <!-- Repository -->
   <PropertyGroup Label="repository">

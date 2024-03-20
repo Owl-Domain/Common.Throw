@@ -33,7 +33,7 @@
     <Title>OwlDomain.Common.Throw</Title>
     <Description>
       A package that provides non-inlinable helper methods for throwing 
-      different exceptions, meant to reduce the binary size.
+      different exceptions, meant to reduce the compiled code size.
     </Description>
     <PackageTags>owldomain, throwing, throw-helper</PackageTags>
 
@@ -42,8 +42,14 @@
     <Authors>Owl Domain, Nightowl</Authors>
     <Company>OwlDomain</Company>
 
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/Owl-Domain/Common.Throw</PackageProjectUrl>
   </PropertyGroup>
+
+  <!-- Readme -->
+  <ItemGroup Label="readme">
+    <None Include="readme.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <!-- Repository -->
   <PropertyGroup Label="repository">
