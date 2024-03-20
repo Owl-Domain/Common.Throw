@@ -49,7 +49,7 @@ simply use the `OwlDomain.Common` namespace, which will provide you access to th
 `Throw` class, which provides the static property `For`, on which you will have
 access to all of the extension methods for throwing exceptions.
 
-An example of this would be
+An example of this would be:
 ```csharp
 using OwlDomain.Common;
 
