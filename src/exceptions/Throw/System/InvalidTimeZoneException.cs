@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidTimeZoneException()"/>
    /// <exception cref="InvalidTimeZoneException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidTimeZone(this IThrow @throw)
+   public static void InvalidTimeZone(this IThrowFor @throw)
    {
       throw new InvalidTimeZoneException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidTimeZoneException(string)"/>
    /// <exception cref="InvalidTimeZoneException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidTimeZone(this IThrow @throw, string? message)
+   public static void InvalidTimeZone(this IThrowFor @throw, string? message)
    {
       throw new InvalidTimeZoneException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidTimeZoneException(string, Exception)"/>
    /// <exception cref="InvalidTimeZoneException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidTimeZone(this IThrow @throw, string? message, Exception? innerException)
+   public static void InvalidTimeZone(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new InvalidTimeZoneException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidTimeZoneException()"/>
    /// <exception cref="InvalidTimeZoneException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidTimeZone<T>(this IThrow @throw)
+   public static T InvalidTimeZone<T>(this IThrowFor @throw)
    {
       InvalidTimeZone(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidTimeZoneException(string)"/>
    /// <exception cref="InvalidTimeZoneException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidTimeZone<T>(this IThrow @throw, string? message)
+   public static T InvalidTimeZone<T>(this IThrowFor @throw, string? message)
    {
       InvalidTimeZone(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidTimeZoneException(string, Exception)"/>
    /// <exception cref="InvalidTimeZoneException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidTimeZone<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T InvalidTimeZone<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       InvalidTimeZone(@throw, message, innerException);
       return default!;

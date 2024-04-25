@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidCastException()"/>
    /// <exception cref="InvalidCastException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidCast(this IThrow @throw)
+   public static void InvalidCast(this IThrowFor @throw)
    {
       throw new InvalidCastException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidCastException(string)"/>
    /// <exception cref="InvalidCastException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidCast(this IThrow @throw, string? message)
+   public static void InvalidCast(this IThrowFor @throw, string? message)
    {
       throw new InvalidCastException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidCastException(string, Exception)"/>
    /// <exception cref="InvalidCastException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidCast(this IThrow @throw, string? message, Exception? innerException)
+   public static void InvalidCast(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new InvalidCastException(message, innerException);
    }
@@ -30,7 +30,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidCastException(string, int)"/>
    /// <exception cref="InvalidCastException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidCast(this IThrow @throw, string? message, int errorCode)
+   public static void InvalidCast(this IThrowFor @throw, string? message, int errorCode)
    {
       throw new InvalidCastException(message, errorCode);
    }
@@ -40,7 +40,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidCastException()"/>
    /// <exception cref="InvalidCastException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidCast<T>(this IThrow @throw)
+   public static T InvalidCast<T>(this IThrowFor @throw)
    {
       InvalidCast(@throw);
       return default!;
@@ -49,7 +49,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidCastException(string)"/>
    /// <exception cref="InvalidCastException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidCast<T>(this IThrow @throw, string? message)
+   public static T InvalidCast<T>(this IThrowFor @throw, string? message)
    {
       InvalidCast(@throw, message);
       return default!;
@@ -58,7 +58,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidCastException(string, Exception)"/>
    /// <exception cref="InvalidCastException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidCast<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T InvalidCast<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       InvalidCast(@throw, message, innerException);
       return default!;
@@ -67,7 +67,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidCastException(string, int)"/>
    /// <exception cref="InvalidCastException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidCast<T>(this IThrow @throw, string? message, int errorCode)
+   public static T InvalidCast<T>(this IThrowFor @throw, string? message, int errorCode)
    {
       InvalidCast(@throw, message, errorCode);
       return default!;

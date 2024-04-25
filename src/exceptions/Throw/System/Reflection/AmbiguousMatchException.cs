@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AmbiguousMatchException()"/>
    /// <exception cref="AmbiguousMatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void AmbiguousMatch(this IThrow @throw)
+   public static void AmbiguousMatch(this IThrowFor @throw)
    {
       throw new AmbiguousMatchException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AmbiguousMatchException(string)"/>
    /// <exception cref="AmbiguousMatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void AmbiguousMatch(this IThrow @throw, string? message)
+   public static void AmbiguousMatch(this IThrowFor @throw, string? message)
    {
       throw new AmbiguousMatchException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AmbiguousMatchException(string, Exception)"/>
    /// <exception cref="AmbiguousMatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void AmbiguousMatch(this IThrow @throw, string? message, Exception? inner)
+   public static void AmbiguousMatch(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new AmbiguousMatchException(message, inner);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AmbiguousMatchException()"/>
    /// <exception cref="AmbiguousMatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T AmbiguousMatch<T>(this IThrow @throw)
+   public static T AmbiguousMatch<T>(this IThrowFor @throw)
    {
       AmbiguousMatch(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AmbiguousMatchException(string)"/>
    /// <exception cref="AmbiguousMatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T AmbiguousMatch<T>(this IThrow @throw, string? message)
+   public static T AmbiguousMatch<T>(this IThrowFor @throw, string? message)
    {
       AmbiguousMatch(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AmbiguousMatchException(string, Exception)"/>
    /// <exception cref="AmbiguousMatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T AmbiguousMatch<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T AmbiguousMatch<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       AmbiguousMatch(@throw, message, inner);
       return default!;

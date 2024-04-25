@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AmbiguousImplementationException()"/>
    /// <exception cref="AmbiguousImplementationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void AmbiguousImplementation(this IThrow @throw)
+   public static void AmbiguousImplementation(this IThrowFor @throw)
    {
       throw new AmbiguousImplementationException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AmbiguousImplementationException(string)"/>
    /// <exception cref="AmbiguousImplementationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void AmbiguousImplementation(this IThrow @throw, string? message)
+   public static void AmbiguousImplementation(this IThrowFor @throw, string? message)
    {
       throw new AmbiguousImplementationException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AmbiguousImplementationException(string, Exception)"/>
    /// <exception cref="AmbiguousImplementationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void AmbiguousImplementation(this IThrow @throw, string? message, Exception? innerException)
+   public static void AmbiguousImplementation(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new AmbiguousImplementationException(message, innerException);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AmbiguousImplementationException()"/>
    /// <exception cref="AmbiguousImplementationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T AmbiguousImplementation<T>(this IThrow @throw)
+   public static T AmbiguousImplementation<T>(this IThrowFor @throw)
    {
       AmbiguousImplementation(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AmbiguousImplementationException(string)"/>
    /// <exception cref="AmbiguousImplementationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T AmbiguousImplementation<T>(this IThrow @throw, string? message)
+   public static T AmbiguousImplementation<T>(this IThrowFor @throw, string? message)
    {
       AmbiguousImplementation(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AmbiguousImplementationException(string, Exception)"/>
    /// <exception cref="AmbiguousImplementationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T AmbiguousImplementation<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T AmbiguousImplementation<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       AmbiguousImplementation(@throw, message, innerException);
       return default!;

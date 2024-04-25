@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ThreadStateException()"/>
    /// <exception cref="ThreadStateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ThreadState(this IThrow @throw)
+   public static void ThreadState(this IThrowFor @throw)
    {
       throw new ThreadStateException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ThreadStateException(string)"/>
    /// <exception cref="ThreadStateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ThreadState(this IThrow @throw, string? message)
+   public static void ThreadState(this IThrowFor @throw, string? message)
    {
       throw new ThreadStateException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ThreadStateException(string, Exception)"/>
    /// <exception cref="ThreadStateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ThreadState(this IThrow @throw, string? message, Exception? innerException)
+   public static void ThreadState(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new ThreadStateException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ThreadStateException()"/>
    /// <exception cref="ThreadStateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ThreadState<T>(this IThrow @throw)
+   public static T ThreadState<T>(this IThrowFor @throw)
    {
       ThreadState(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ThreadStateException(string)"/>
    /// <exception cref="ThreadStateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ThreadState<T>(this IThrow @throw, string? message)
+   public static T ThreadState<T>(this IThrowFor @throw, string? message)
    {
       ThreadState(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ThreadStateException(string, Exception)"/>
    /// <exception cref="ThreadStateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ThreadState<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T ThreadState<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       ThreadState(@throw, message, innerException);
       return default!;

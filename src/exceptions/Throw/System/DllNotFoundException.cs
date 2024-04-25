@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DllNotFoundException()"/>
    /// <exception cref="DllNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void DllNotFound(this IThrow @throw)
+   public static void DllNotFound(this IThrowFor @throw)
    {
       throw new DllNotFoundException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DllNotFoundException(string)"/>
    /// <exception cref="DllNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void DllNotFound(this IThrow @throw, string? message)
+   public static void DllNotFound(this IThrowFor @throw, string? message)
    {
       throw new DllNotFoundException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DllNotFoundException(string, Exception)"/>
    /// <exception cref="DllNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void DllNotFound(this IThrow @throw, string? message, Exception? inner)
+   public static void DllNotFound(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new DllNotFoundException(message, inner);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DllNotFoundException()"/>
    /// <exception cref="DllNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T DllNotFound<T>(this IThrow @throw)
+   public static T DllNotFound<T>(this IThrowFor @throw)
    {
       DllNotFound(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DllNotFoundException(string)"/>
    /// <exception cref="DllNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T DllNotFound<T>(this IThrow @throw, string? message)
+   public static T DllNotFound<T>(this IThrowFor @throw, string? message)
    {
       DllNotFound(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DllNotFoundException(string, Exception)"/>
    /// <exception cref="DllNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T DllNotFound<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T DllNotFound<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       DllNotFound(@throw, message, inner);
       return default!;

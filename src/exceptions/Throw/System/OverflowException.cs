@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="OverflowException()"/>
    /// <exception cref="OverflowException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Overflow(this IThrow @throw)
+   public static void Overflow(this IThrowFor @throw)
    {
       throw new OverflowException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="OverflowException(string)"/>
    /// <exception cref="OverflowException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Overflow(this IThrow @throw, string? message)
+   public static void Overflow(this IThrowFor @throw, string? message)
    {
       throw new OverflowException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="OverflowException(string, Exception)"/>
    /// <exception cref="OverflowException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Overflow(this IThrow @throw, string? message, Exception? innerException)
+   public static void Overflow(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new OverflowException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="OverflowException()"/>
    /// <exception cref="OverflowException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Overflow<T>(this IThrow @throw)
+   public static T Overflow<T>(this IThrowFor @throw)
    {
       Overflow(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="OverflowException(string)"/>
    /// <exception cref="OverflowException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Overflow<T>(this IThrow @throw, string? message)
+   public static T Overflow<T>(this IThrowFor @throw, string? message)
    {
       Overflow(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="OverflowException(string, Exception)"/>
    /// <exception cref="OverflowException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Overflow<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T Overflow<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       Overflow(@throw, message, innerException);
       return default!;

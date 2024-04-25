@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentException()"/>
    /// <exception cref="ArgumentException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Argument(this IThrow @throw)
+   public static void Argument(this IThrowFor @throw)
    {
       throw new ArgumentException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentException(string)"/>
    /// <exception cref="ArgumentException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Argument(this IThrow @throw, string? message)
+   public static void Argument(this IThrowFor @throw, string? message)
    {
       throw new ArgumentException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentException(string, Exception)"/>
    /// <exception cref="ArgumentException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Argument(this IThrow @throw, string? message, Exception? innerException)
+   public static void Argument(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new ArgumentException(message, innerException);
    }
@@ -30,7 +30,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentException(string, string, Exception)"/>
    /// <exception cref="ArgumentException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Argument(this IThrow @throw, string? message, string? paramName, Exception? innerException)
+   public static void Argument(this IThrowFor @throw, string? message, string? paramName, Exception? innerException)
    {
       throw new ArgumentException(message, paramName, innerException);
    }
@@ -38,7 +38,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentException(string, string)"/>
    /// <exception cref="ArgumentException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Argument(this IThrow @throw, string? message, string? paramName)
+   public static void Argument(this IThrowFor @throw, string? message, string? paramName)
    {
       throw new ArgumentException(message, paramName);
    }
@@ -48,7 +48,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentException()"/>
    /// <exception cref="ArgumentException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Argument<T>(this IThrow @throw)
+   public static T Argument<T>(this IThrowFor @throw)
    {
       Argument(@throw);
       return default!;
@@ -57,7 +57,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentException(string)"/>
    /// <exception cref="ArgumentException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Argument<T>(this IThrow @throw, string? message)
+   public static T Argument<T>(this IThrowFor @throw, string? message)
    {
       Argument(@throw, message);
       return default!;
@@ -66,7 +66,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentException(string, Exception)"/>
    /// <exception cref="ArgumentException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Argument<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T Argument<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       Argument(@throw, message, innerException);
       return default!;
@@ -75,7 +75,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentException(string, string, Exception)"/>
    /// <exception cref="ArgumentException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Argument<T>(this IThrow @throw, string? message, string? paramName, Exception? innerException)
+   public static T Argument<T>(this IThrowFor @throw, string? message, string? paramName, Exception? innerException)
    {
       Argument(@throw, message, paramName, innerException);
       return default!;
@@ -84,7 +84,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentException(string, string)"/>
    /// <exception cref="ArgumentException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Argument<T>(this IThrow @throw, string? message, string? paramName)
+   public static T Argument<T>(this IThrowFor @throw, string? message, string? paramName)
    {
       Argument(@throw, message, paramName);
       return default!;

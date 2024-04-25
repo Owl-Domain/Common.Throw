@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ObjectDisposedException(string)"/>
    /// <exception cref="ObjectDisposedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ObjectDisposed(this IThrow @throw, string? objectName)
+   public static void ObjectDisposed(this IThrowFor @throw, string? objectName)
    {
       throw new ObjectDisposedException(objectName);
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ObjectDisposedException(string, string)"/>
    /// <exception cref="ObjectDisposedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ObjectDisposed(this IThrow @throw, string? objectName, string? message)
+   public static void ObjectDisposed(this IThrowFor @throw, string? objectName, string? message)
    {
       throw new ObjectDisposedException(objectName, message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ObjectDisposedException(string, Exception)"/>
    /// <exception cref="ObjectDisposedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ObjectDisposed(this IThrow @throw, string? message, Exception? innerException)
+   public static void ObjectDisposed(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new ObjectDisposedException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ObjectDisposedException(string)"/>
    /// <exception cref="ObjectDisposedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ObjectDisposed<T>(this IThrow @throw, string? objectName)
+   public static T ObjectDisposed<T>(this IThrowFor @throw, string? objectName)
    {
       ObjectDisposed(@throw, objectName);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ObjectDisposedException(string, string)"/>
    /// <exception cref="ObjectDisposedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ObjectDisposed<T>(this IThrow @throw, string? objectName, string? message)
+   public static T ObjectDisposed<T>(this IThrowFor @throw, string? objectName, string? message)
    {
       ObjectDisposed(@throw, objectName, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ObjectDisposedException(string, Exception)"/>
    /// <exception cref="ObjectDisposedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ObjectDisposed<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T ObjectDisposed<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       ObjectDisposed(@throw, message, innerException);
       return default!;

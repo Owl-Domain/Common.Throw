@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidOperationException()"/>
    /// <exception cref="InvalidOperationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidOperation(this IThrow @throw)
+   public static void InvalidOperation(this IThrowFor @throw)
    {
       throw new InvalidOperationException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidOperationException(string)"/>
    /// <exception cref="InvalidOperationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidOperation(this IThrow @throw, string? message)
+   public static void InvalidOperation(this IThrowFor @throw, string? message)
    {
       throw new InvalidOperationException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidOperationException(string, Exception)"/>
    /// <exception cref="InvalidOperationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidOperation(this IThrow @throw, string? message, Exception? innerException)
+   public static void InvalidOperation(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new InvalidOperationException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidOperationException()"/>
    /// <exception cref="InvalidOperationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidOperation<T>(this IThrow @throw)
+   public static T InvalidOperation<T>(this IThrowFor @throw)
    {
       InvalidOperation(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidOperationException(string)"/>
    /// <exception cref="InvalidOperationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidOperation<T>(this IThrow @throw, string? message)
+   public static T InvalidOperation<T>(this IThrowFor @throw, string? message)
    {
       InvalidOperation(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidOperationException(string, Exception)"/>
    /// <exception cref="InvalidOperationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidOperation<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T InvalidOperation<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       InvalidOperation(@throw, message, innerException);
       return default!;

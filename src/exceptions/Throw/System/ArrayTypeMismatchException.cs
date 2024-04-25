@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArrayTypeMismatchException()"/>
    /// <exception cref="ArrayTypeMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ArrayTypeMismatch(this IThrow @throw)
+   public static void ArrayTypeMismatch(this IThrowFor @throw)
    {
       throw new ArrayTypeMismatchException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArrayTypeMismatchException(string)"/>
    /// <exception cref="ArrayTypeMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ArrayTypeMismatch(this IThrow @throw, string? message)
+   public static void ArrayTypeMismatch(this IThrowFor @throw, string? message)
    {
       throw new ArrayTypeMismatchException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArrayTypeMismatchException(string, Exception)"/>
    /// <exception cref="ArrayTypeMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ArrayTypeMismatch(this IThrow @throw, string? message, Exception? innerException)
+   public static void ArrayTypeMismatch(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new ArrayTypeMismatchException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArrayTypeMismatchException()"/>
    /// <exception cref="ArrayTypeMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ArrayTypeMismatch<T>(this IThrow @throw)
+   public static T ArrayTypeMismatch<T>(this IThrowFor @throw)
    {
       ArrayTypeMismatch(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArrayTypeMismatchException(string)"/>
    /// <exception cref="ArrayTypeMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ArrayTypeMismatch<T>(this IThrow @throw, string? message)
+   public static T ArrayTypeMismatch<T>(this IThrowFor @throw, string? message)
    {
       ArrayTypeMismatch(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArrayTypeMismatchException(string, Exception)"/>
    /// <exception cref="ArrayTypeMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ArrayTypeMismatch<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T ArrayTypeMismatch<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       ArrayTypeMismatch(@throw, message, innerException);
       return default!;

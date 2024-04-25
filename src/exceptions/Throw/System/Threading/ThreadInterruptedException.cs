@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ThreadInterruptedException()"/>
    /// <exception cref="ThreadInterruptedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ThreadInterrupted(this IThrow @throw)
+   public static void ThreadInterrupted(this IThrowFor @throw)
    {
       throw new ThreadInterruptedException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ThreadInterruptedException(string)"/>
    /// <exception cref="ThreadInterruptedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ThreadInterrupted(this IThrow @throw, string? message)
+   public static void ThreadInterrupted(this IThrowFor @throw, string? message)
    {
       throw new ThreadInterruptedException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ThreadInterruptedException(string, Exception)"/>
    /// <exception cref="ThreadInterruptedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ThreadInterrupted(this IThrow @throw, string? message, Exception? innerException)
+   public static void ThreadInterrupted(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new ThreadInterruptedException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ThreadInterruptedException()"/>
    /// <exception cref="ThreadInterruptedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ThreadInterrupted<T>(this IThrow @throw)
+   public static T ThreadInterrupted<T>(this IThrowFor @throw)
    {
       ThreadInterrupted(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ThreadInterruptedException(string)"/>
    /// <exception cref="ThreadInterruptedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ThreadInterrupted<T>(this IThrow @throw, string? message)
+   public static T ThreadInterrupted<T>(this IThrowFor @throw, string? message)
    {
       ThreadInterrupted(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ThreadInterruptedException(string, Exception)"/>
    /// <exception cref="ThreadInterruptedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ThreadInterrupted<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T ThreadInterrupted<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       ThreadInterrupted(@throw, message, innerException);
       return default!;

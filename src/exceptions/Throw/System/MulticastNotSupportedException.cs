@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MulticastNotSupportedException()"/>
    /// <exception cref="MulticastNotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MulticastNotSupported(this IThrow @throw)
+   public static void MulticastNotSupported(this IThrowFor @throw)
    {
       throw new MulticastNotSupportedException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MulticastNotSupportedException(string)"/>
    /// <exception cref="MulticastNotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MulticastNotSupported(this IThrow @throw, string? message)
+   public static void MulticastNotSupported(this IThrowFor @throw, string? message)
    {
       throw new MulticastNotSupportedException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MulticastNotSupportedException(string, Exception)"/>
    /// <exception cref="MulticastNotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MulticastNotSupported(this IThrow @throw, string? message, Exception? inner)
+   public static void MulticastNotSupported(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new MulticastNotSupportedException(message, inner);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MulticastNotSupportedException()"/>
    /// <exception cref="MulticastNotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MulticastNotSupported<T>(this IThrow @throw)
+   public static T MulticastNotSupported<T>(this IThrowFor @throw)
    {
       MulticastNotSupported(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MulticastNotSupportedException(string)"/>
    /// <exception cref="MulticastNotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MulticastNotSupported<T>(this IThrow @throw, string? message)
+   public static T MulticastNotSupported<T>(this IThrowFor @throw, string? message)
    {
       MulticastNotSupported(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MulticastNotSupportedException(string, Exception)"/>
    /// <exception cref="MulticastNotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MulticastNotSupported<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T MulticastNotSupported<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       MulticastNotSupported(@throw, message, inner);
       return default!;

@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="StackOverflowException()"/>
    /// <exception cref="StackOverflowException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void StackOverflow(this IThrow @throw)
+   public static void StackOverflow(this IThrowFor @throw)
    {
       throw new StackOverflowException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="StackOverflowException(string)"/>
    /// <exception cref="StackOverflowException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void StackOverflow(this IThrow @throw, string? message)
+   public static void StackOverflow(this IThrowFor @throw, string? message)
    {
       throw new StackOverflowException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="StackOverflowException(string, Exception)"/>
    /// <exception cref="StackOverflowException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void StackOverflow(this IThrow @throw, string? message, Exception? innerException)
+   public static void StackOverflow(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new StackOverflowException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="StackOverflowException()"/>
    /// <exception cref="StackOverflowException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T StackOverflow<T>(this IThrow @throw)
+   public static T StackOverflow<T>(this IThrowFor @throw)
    {
       StackOverflow(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="StackOverflowException(string)"/>
    /// <exception cref="StackOverflowException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T StackOverflow<T>(this IThrow @throw, string? message)
+   public static T StackOverflow<T>(this IThrowFor @throw, string? message)
    {
       StackOverflow(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="StackOverflowException(string, Exception)"/>
    /// <exception cref="StackOverflowException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T StackOverflow<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T StackOverflow<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       StackOverflow(@throw, message, innerException);
       return default!;

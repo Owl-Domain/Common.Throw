@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="VerificationException()"/>
    /// <exception cref="VerificationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Verification(this IThrow @throw)
+   public static void Verification(this IThrowFor @throw)
    {
       throw new VerificationException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="VerificationException(string)"/>
    /// <exception cref="VerificationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Verification(this IThrow @throw, string? message)
+   public static void Verification(this IThrowFor @throw, string? message)
    {
       throw new VerificationException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="VerificationException(string, Exception)"/>
    /// <exception cref="VerificationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Verification(this IThrow @throw, string? message, Exception? innerException)
+   public static void Verification(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new VerificationException(message, innerException);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="VerificationException()"/>
    /// <exception cref="VerificationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Verification<T>(this IThrow @throw)
+   public static T Verification<T>(this IThrowFor @throw)
    {
       Verification(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="VerificationException(string)"/>
    /// <exception cref="VerificationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Verification<T>(this IThrow @throw, string? message)
+   public static T Verification<T>(this IThrowFor @throw, string? message)
    {
       Verification(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="VerificationException(string, Exception)"/>
    /// <exception cref="VerificationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Verification<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T Verification<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       Verification(@throw, message, innerException);
       return default!;

@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentOutOfRangeException()"/>
    /// <exception cref="ArgumentOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ArgumentOutOfRange(this IThrow @throw)
+   public static void ArgumentOutOfRange(this IThrowFor @throw)
    {
       throw new ArgumentOutOfRangeException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentOutOfRangeException(string)"/>
    /// <exception cref="ArgumentOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ArgumentOutOfRange(this IThrow @throw, string? paramName)
+   public static void ArgumentOutOfRange(this IThrowFor @throw, string? paramName)
    {
       throw new ArgumentOutOfRangeException(paramName);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentOutOfRangeException(string, string)"/>
    /// <exception cref="ArgumentOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ArgumentOutOfRange(this IThrow @throw, string? paramName, string? message)
+   public static void ArgumentOutOfRange(this IThrowFor @throw, string? paramName, string? message)
    {
       throw new ArgumentOutOfRangeException(paramName, message);
    }
@@ -30,7 +30,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentOutOfRangeException(string, Exception)"/>
    /// <exception cref="ArgumentOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ArgumentOutOfRange(this IThrow @throw, string? message, Exception? innerException)
+   public static void ArgumentOutOfRange(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new ArgumentOutOfRangeException(message, innerException);
    }
@@ -38,7 +38,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentOutOfRangeException(string, Object, string)"/>
    /// <exception cref="ArgumentOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ArgumentOutOfRange(this IThrow @throw, string? paramName, Object? actualValue, string? message)
+   public static void ArgumentOutOfRange(this IThrowFor @throw, string? paramName, Object? actualValue, string? message)
    {
       throw new ArgumentOutOfRangeException(paramName, actualValue, message);
    }
@@ -48,7 +48,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentOutOfRangeException()"/>
    /// <exception cref="ArgumentOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ArgumentOutOfRange<T>(this IThrow @throw)
+   public static T ArgumentOutOfRange<T>(this IThrowFor @throw)
    {
       ArgumentOutOfRange(@throw);
       return default!;
@@ -57,7 +57,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentOutOfRangeException(string)"/>
    /// <exception cref="ArgumentOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ArgumentOutOfRange<T>(this IThrow @throw, string? paramName)
+   public static T ArgumentOutOfRange<T>(this IThrowFor @throw, string? paramName)
    {
       ArgumentOutOfRange(@throw, paramName);
       return default!;
@@ -66,7 +66,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentOutOfRangeException(string, string)"/>
    /// <exception cref="ArgumentOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ArgumentOutOfRange<T>(this IThrow @throw, string? paramName, string? message)
+   public static T ArgumentOutOfRange<T>(this IThrowFor @throw, string? paramName, string? message)
    {
       ArgumentOutOfRange(@throw, paramName, message);
       return default!;
@@ -75,7 +75,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentOutOfRangeException(string, Exception)"/>
    /// <exception cref="ArgumentOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ArgumentOutOfRange<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T ArgumentOutOfRange<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       ArgumentOutOfRange(@throw, message, innerException);
       return default!;
@@ -84,7 +84,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentOutOfRangeException(string, Object, string)"/>
    /// <exception cref="ArgumentOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ArgumentOutOfRange<T>(this IThrow @throw, string? paramName, Object? actualValue, string? message)
+   public static T ArgumentOutOfRange<T>(this IThrowFor @throw, string? paramName, Object? actualValue, string? message)
    {
       ArgumentOutOfRange(@throw, paramName, actualValue, message);
       return default!;

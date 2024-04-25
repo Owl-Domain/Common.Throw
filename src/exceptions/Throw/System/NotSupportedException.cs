@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotSupportedException()"/>
    /// <exception cref="NotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void NotSupported(this IThrow @throw)
+   public static void NotSupported(this IThrowFor @throw)
    {
       throw new NotSupportedException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotSupportedException(string)"/>
    /// <exception cref="NotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void NotSupported(this IThrow @throw, string? message)
+   public static void NotSupported(this IThrowFor @throw, string? message)
    {
       throw new NotSupportedException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotSupportedException(string, Exception)"/>
    /// <exception cref="NotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void NotSupported(this IThrow @throw, string? message, Exception? innerException)
+   public static void NotSupported(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new NotSupportedException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotSupportedException()"/>
    /// <exception cref="NotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T NotSupported<T>(this IThrow @throw)
+   public static T NotSupported<T>(this IThrowFor @throw)
    {
       NotSupported(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotSupportedException(string)"/>
    /// <exception cref="NotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T NotSupported<T>(this IThrow @throw, string? message)
+   public static T NotSupported<T>(this IThrowFor @throw, string? message)
    {
       NotSupported(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotSupportedException(string, Exception)"/>
    /// <exception cref="NotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T NotSupported<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T NotSupported<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       NotSupported(@throw, message, innerException);
       return default!;

@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TargetException()"/>
    /// <exception cref="TargetException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Target(this IThrow @throw)
+   public static void Target(this IThrowFor @throw)
    {
       throw new TargetException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TargetException(string)"/>
    /// <exception cref="TargetException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Target(this IThrow @throw, string? message)
+   public static void Target(this IThrowFor @throw, string? message)
    {
       throw new TargetException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TargetException(string, Exception)"/>
    /// <exception cref="TargetException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Target(this IThrow @throw, string? message, Exception? inner)
+   public static void Target(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new TargetException(message, inner);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TargetException()"/>
    /// <exception cref="TargetException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Target<T>(this IThrow @throw)
+   public static T Target<T>(this IThrowFor @throw)
    {
       Target(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TargetException(string)"/>
    /// <exception cref="TargetException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Target<T>(this IThrow @throw, string? message)
+   public static T Target<T>(this IThrowFor @throw, string? message)
    {
       Target(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TargetException(string, Exception)"/>
    /// <exception cref="TargetException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Target<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T Target<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       Target(@throw, message, inner);
       return default!;

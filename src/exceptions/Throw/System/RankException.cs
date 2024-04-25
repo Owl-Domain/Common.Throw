@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="RankException()"/>
    /// <exception cref="RankException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Rank(this IThrow @throw)
+   public static void Rank(this IThrowFor @throw)
    {
       throw new RankException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="RankException(string)"/>
    /// <exception cref="RankException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Rank(this IThrow @throw, string? message)
+   public static void Rank(this IThrowFor @throw, string? message)
    {
       throw new RankException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="RankException(string, Exception)"/>
    /// <exception cref="RankException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Rank(this IThrow @throw, string? message, Exception? innerException)
+   public static void Rank(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new RankException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="RankException()"/>
    /// <exception cref="RankException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Rank<T>(this IThrow @throw)
+   public static T Rank<T>(this IThrowFor @throw)
    {
       Rank(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="RankException(string)"/>
    /// <exception cref="RankException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Rank<T>(this IThrow @throw, string? message)
+   public static T Rank<T>(this IThrowFor @throw, string? message)
    {
       Rank(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="RankException(string, Exception)"/>
    /// <exception cref="RankException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Rank<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T Rank<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       Rank(@throw, message, innerException);
       return default!;

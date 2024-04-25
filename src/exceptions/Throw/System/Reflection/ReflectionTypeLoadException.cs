@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ReflectionTypeLoadException(Type[], Exception[])"/>
    /// <exception cref="ReflectionTypeLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ReflectionTypeLoad(this IThrow @throw, Type?[]? classes, Exception?[]? exceptions)
+   public static void ReflectionTypeLoad(this IThrowFor @throw, Type?[]? classes, Exception?[]? exceptions)
    {
       throw new ReflectionTypeLoadException(classes, exceptions);
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ReflectionTypeLoadException(Type[], Exception[], string)"/>
    /// <exception cref="ReflectionTypeLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ReflectionTypeLoad(this IThrow @throw, Type?[]? classes, Exception?[]? exceptions, string? message)
+   public static void ReflectionTypeLoad(this IThrowFor @throw, Type?[]? classes, Exception?[]? exceptions, string? message)
    {
       throw new ReflectionTypeLoadException(classes, exceptions, message);
    }
@@ -26,7 +26,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ReflectionTypeLoadException(Type[], Exception[])"/>
    /// <exception cref="ReflectionTypeLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ReflectionTypeLoad<T>(this IThrow @throw, Type?[]? classes, Exception?[]? exceptions)
+   public static T ReflectionTypeLoad<T>(this IThrowFor @throw, Type?[]? classes, Exception?[]? exceptions)
    {
       ReflectionTypeLoad(@throw, classes, exceptions);
       return default!;
@@ -35,7 +35,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ReflectionTypeLoadException(Type[], Exception[], string)"/>
    /// <exception cref="ReflectionTypeLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ReflectionTypeLoad<T>(this IThrow @throw, Type?[]? classes, Exception?[]? exceptions, string? message)
+   public static T ReflectionTypeLoad<T>(this IThrowFor @throw, Type?[]? classes, Exception?[]? exceptions, string? message)
    {
       ReflectionTypeLoad(@throw, classes, exceptions, message);
       return default!;

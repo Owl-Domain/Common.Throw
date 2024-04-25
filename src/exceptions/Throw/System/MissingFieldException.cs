@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingFieldException()"/>
    /// <exception cref="MissingFieldException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingField(this IThrow @throw)
+   public static void MissingField(this IThrowFor @throw)
    {
       throw new MissingFieldException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingFieldException(string)"/>
    /// <exception cref="MissingFieldException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingField(this IThrow @throw, string? message)
+   public static void MissingField(this IThrowFor @throw, string? message)
    {
       throw new MissingFieldException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingFieldException(string, Exception)"/>
    /// <exception cref="MissingFieldException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingField(this IThrow @throw, string? message, Exception? inner)
+   public static void MissingField(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new MissingFieldException(message, inner);
    }
@@ -30,7 +30,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingFieldException(string, string)"/>
    /// <exception cref="MissingFieldException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingField(this IThrow @throw, string? className, string? fieldName)
+   public static void MissingField(this IThrowFor @throw, string? className, string? fieldName)
    {
       throw new MissingFieldException(className, fieldName);
    }
@@ -40,7 +40,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingFieldException()"/>
    /// <exception cref="MissingFieldException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingField<T>(this IThrow @throw)
+   public static T MissingField<T>(this IThrowFor @throw)
    {
       MissingField(@throw);
       return default!;
@@ -49,7 +49,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingFieldException(string)"/>
    /// <exception cref="MissingFieldException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingField<T>(this IThrow @throw, string? message)
+   public static T MissingField<T>(this IThrowFor @throw, string? message)
    {
       MissingField(@throw, message);
       return default!;
@@ -58,7 +58,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingFieldException(string, Exception)"/>
    /// <exception cref="MissingFieldException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingField<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T MissingField<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       MissingField(@throw, message, inner);
       return default!;
@@ -67,7 +67,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingFieldException(string, string)"/>
    /// <exception cref="MissingFieldException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingField<T>(this IThrow @throw, string? className, string? fieldName)
+   public static T MissingField<T>(this IThrowFor @throw, string? className, string? fieldName)
    {
       MissingField(@throw, className, fieldName);
       return default!;

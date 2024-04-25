@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotFiniteNumberException()"/>
    /// <exception cref="NotFiniteNumberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void NotFiniteNumber(this IThrow @throw)
+   public static void NotFiniteNumber(this IThrowFor @throw)
    {
       throw new NotFiniteNumberException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotFiniteNumberException(Double)"/>
    /// <exception cref="NotFiniteNumberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void NotFiniteNumber(this IThrow @throw, Double offendingNumber)
+   public static void NotFiniteNumber(this IThrowFor @throw, Double offendingNumber)
    {
       throw new NotFiniteNumberException(offendingNumber);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotFiniteNumberException(string)"/>
    /// <exception cref="NotFiniteNumberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void NotFiniteNumber(this IThrow @throw, string? message)
+   public static void NotFiniteNumber(this IThrowFor @throw, string? message)
    {
       throw new NotFiniteNumberException(message);
    }
@@ -30,7 +30,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotFiniteNumberException(string, Double)"/>
    /// <exception cref="NotFiniteNumberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void NotFiniteNumber(this IThrow @throw, string? message, Double offendingNumber)
+   public static void NotFiniteNumber(this IThrowFor @throw, string? message, Double offendingNumber)
    {
       throw new NotFiniteNumberException(message, offendingNumber);
    }
@@ -38,7 +38,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotFiniteNumberException(string, Exception)"/>
    /// <exception cref="NotFiniteNumberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void NotFiniteNumber(this IThrow @throw, string? message, Exception? innerException)
+   public static void NotFiniteNumber(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new NotFiniteNumberException(message, innerException);
    }
@@ -46,7 +46,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotFiniteNumberException(string, Double, Exception)"/>
    /// <exception cref="NotFiniteNumberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void NotFiniteNumber(this IThrow @throw, string? message, Double offendingNumber, Exception? innerException)
+   public static void NotFiniteNumber(this IThrowFor @throw, string? message, Double offendingNumber, Exception? innerException)
    {
       throw new NotFiniteNumberException(message, offendingNumber, innerException);
    }
@@ -56,7 +56,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotFiniteNumberException()"/>
    /// <exception cref="NotFiniteNumberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T NotFiniteNumber<T>(this IThrow @throw)
+   public static T NotFiniteNumber<T>(this IThrowFor @throw)
    {
       NotFiniteNumber(@throw);
       return default!;
@@ -65,7 +65,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotFiniteNumberException(Double)"/>
    /// <exception cref="NotFiniteNumberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T NotFiniteNumber<T>(this IThrow @throw, Double offendingNumber)
+   public static T NotFiniteNumber<T>(this IThrowFor @throw, Double offendingNumber)
    {
       NotFiniteNumber(@throw, offendingNumber);
       return default!;
@@ -74,7 +74,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotFiniteNumberException(string)"/>
    /// <exception cref="NotFiniteNumberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T NotFiniteNumber<T>(this IThrow @throw, string? message)
+   public static T NotFiniteNumber<T>(this IThrowFor @throw, string? message)
    {
       NotFiniteNumber(@throw, message);
       return default!;
@@ -83,7 +83,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotFiniteNumberException(string, Double)"/>
    /// <exception cref="NotFiniteNumberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T NotFiniteNumber<T>(this IThrow @throw, string? message, Double offendingNumber)
+   public static T NotFiniteNumber<T>(this IThrowFor @throw, string? message, Double offendingNumber)
    {
       NotFiniteNumber(@throw, message, offendingNumber);
       return default!;
@@ -92,7 +92,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotFiniteNumberException(string, Exception)"/>
    /// <exception cref="NotFiniteNumberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T NotFiniteNumber<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T NotFiniteNumber<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       NotFiniteNumber(@throw, message, innerException);
       return default!;
@@ -101,7 +101,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotFiniteNumberException(string, Double, Exception)"/>
    /// <exception cref="NotFiniteNumberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T NotFiniteNumber<T>(this IThrow @throw, string? message, Double offendingNumber, Exception? innerException)
+   public static T NotFiniteNumber<T>(this IThrowFor @throw, string? message, Double offendingNumber, Exception? innerException)
    {
       NotFiniteNumber(@throw, message, offendingNumber, innerException);
       return default!;

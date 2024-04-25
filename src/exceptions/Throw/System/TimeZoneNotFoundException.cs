@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TimeZoneNotFoundException()"/>
    /// <exception cref="TimeZoneNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TimeZoneNotFound(this IThrow @throw)
+   public static void TimeZoneNotFound(this IThrowFor @throw)
    {
       throw new TimeZoneNotFoundException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TimeZoneNotFoundException(string)"/>
    /// <exception cref="TimeZoneNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TimeZoneNotFound(this IThrow @throw, string? message)
+   public static void TimeZoneNotFound(this IThrowFor @throw, string? message)
    {
       throw new TimeZoneNotFoundException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TimeZoneNotFoundException(string, Exception)"/>
    /// <exception cref="TimeZoneNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TimeZoneNotFound(this IThrow @throw, string? message, Exception? innerException)
+   public static void TimeZoneNotFound(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new TimeZoneNotFoundException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TimeZoneNotFoundException()"/>
    /// <exception cref="TimeZoneNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TimeZoneNotFound<T>(this IThrow @throw)
+   public static T TimeZoneNotFound<T>(this IThrowFor @throw)
    {
       TimeZoneNotFound(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TimeZoneNotFoundException(string)"/>
    /// <exception cref="TimeZoneNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TimeZoneNotFound<T>(this IThrow @throw, string? message)
+   public static T TimeZoneNotFound<T>(this IThrowFor @throw, string? message)
    {
       TimeZoneNotFound(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TimeZoneNotFoundException(string, Exception)"/>
    /// <exception cref="TimeZoneNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TimeZoneNotFound<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T TimeZoneNotFound<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       TimeZoneNotFound(@throw, message, innerException);
       return default!;

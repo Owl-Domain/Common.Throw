@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SafeArrayTypeMismatchException()"/>
    /// <exception cref="SafeArrayTypeMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SafeArrayTypeMismatch(this IThrow @throw)
+   public static void SafeArrayTypeMismatch(this IThrowFor @throw)
    {
       throw new SafeArrayTypeMismatchException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SafeArrayTypeMismatchException(string)"/>
    /// <exception cref="SafeArrayTypeMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SafeArrayTypeMismatch(this IThrow @throw, string? message)
+   public static void SafeArrayTypeMismatch(this IThrowFor @throw, string? message)
    {
       throw new SafeArrayTypeMismatchException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SafeArrayTypeMismatchException(string, Exception)"/>
    /// <exception cref="SafeArrayTypeMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SafeArrayTypeMismatch(this IThrow @throw, string? message, Exception? inner)
+   public static void SafeArrayTypeMismatch(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new SafeArrayTypeMismatchException(message, inner);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SafeArrayTypeMismatchException()"/>
    /// <exception cref="SafeArrayTypeMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SafeArrayTypeMismatch<T>(this IThrow @throw)
+   public static T SafeArrayTypeMismatch<T>(this IThrowFor @throw)
    {
       SafeArrayTypeMismatch(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SafeArrayTypeMismatchException(string)"/>
    /// <exception cref="SafeArrayTypeMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SafeArrayTypeMismatch<T>(this IThrow @throw, string? message)
+   public static T SafeArrayTypeMismatch<T>(this IThrowFor @throw, string? message)
    {
       SafeArrayTypeMismatch(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SafeArrayTypeMismatchException(string, Exception)"/>
    /// <exception cref="SafeArrayTypeMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SafeArrayTypeMismatch<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T SafeArrayTypeMismatch<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       SafeArrayTypeMismatch(@throw, message, inner);
       return default!;

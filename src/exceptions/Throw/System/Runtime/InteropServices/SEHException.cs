@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SEHException()"/>
    /// <exception cref="SEHException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SEH(this IThrow @throw)
+   public static void SEH(this IThrowFor @throw)
    {
       throw new SEHException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SEHException(string)"/>
    /// <exception cref="SEHException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SEH(this IThrow @throw, string? message)
+   public static void SEH(this IThrowFor @throw, string? message)
    {
       throw new SEHException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SEHException(string, Exception)"/>
    /// <exception cref="SEHException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SEH(this IThrow @throw, string? message, Exception? inner)
+   public static void SEH(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new SEHException(message, inner);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SEHException()"/>
    /// <exception cref="SEHException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SEH<T>(this IThrow @throw)
+   public static T SEH<T>(this IThrowFor @throw)
    {
       SEH(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SEHException(string)"/>
    /// <exception cref="SEHException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SEH<T>(this IThrow @throw, string? message)
+   public static T SEH<T>(this IThrowFor @throw, string? message)
    {
       SEH(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SEHException(string, Exception)"/>
    /// <exception cref="SEHException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SEH<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T SEH<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       SEH(@throw, message, inner);
       return default!;

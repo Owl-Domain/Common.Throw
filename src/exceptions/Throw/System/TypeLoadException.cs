@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TypeLoadException()"/>
    /// <exception cref="TypeLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TypeLoad(this IThrow @throw)
+   public static void TypeLoad(this IThrowFor @throw)
    {
       throw new TypeLoadException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TypeLoadException(string)"/>
    /// <exception cref="TypeLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TypeLoad(this IThrow @throw, string? message)
+   public static void TypeLoad(this IThrowFor @throw, string? message)
    {
       throw new TypeLoadException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TypeLoadException(string, Exception)"/>
    /// <exception cref="TypeLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TypeLoad(this IThrow @throw, string? message, Exception? inner)
+   public static void TypeLoad(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new TypeLoadException(message, inner);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TypeLoadException()"/>
    /// <exception cref="TypeLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TypeLoad<T>(this IThrow @throw)
+   public static T TypeLoad<T>(this IThrowFor @throw)
    {
       TypeLoad(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TypeLoadException(string)"/>
    /// <exception cref="TypeLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TypeLoad<T>(this IThrow @throw, string? message)
+   public static T TypeLoad<T>(this IThrowFor @throw, string? message)
    {
       TypeLoad(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TypeLoadException(string, Exception)"/>
    /// <exception cref="TypeLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TypeLoad<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T TypeLoad<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       TypeLoad(@throw, message, inner);
       return default!;

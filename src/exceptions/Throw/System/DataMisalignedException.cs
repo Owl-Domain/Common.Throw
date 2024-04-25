@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DataMisalignedException()"/>
    /// <exception cref="DataMisalignedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void DataMisaligned(this IThrow @throw)
+   public static void DataMisaligned(this IThrowFor @throw)
    {
       throw new DataMisalignedException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DataMisalignedException(string)"/>
    /// <exception cref="DataMisalignedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void DataMisaligned(this IThrow @throw, string? message)
+   public static void DataMisaligned(this IThrowFor @throw, string? message)
    {
       throw new DataMisalignedException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DataMisalignedException(string, Exception)"/>
    /// <exception cref="DataMisalignedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void DataMisaligned(this IThrow @throw, string? message, Exception? innerException)
+   public static void DataMisaligned(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new DataMisalignedException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DataMisalignedException()"/>
    /// <exception cref="DataMisalignedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T DataMisaligned<T>(this IThrow @throw)
+   public static T DataMisaligned<T>(this IThrowFor @throw)
    {
       DataMisaligned(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DataMisalignedException(string)"/>
    /// <exception cref="DataMisalignedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T DataMisaligned<T>(this IThrow @throw, string? message)
+   public static T DataMisaligned<T>(this IThrowFor @throw, string? message)
    {
       DataMisaligned(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DataMisalignedException(string, Exception)"/>
    /// <exception cref="DataMisalignedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T DataMisaligned<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T DataMisaligned<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       DataMisaligned(@throw, message, innerException);
       return default!;

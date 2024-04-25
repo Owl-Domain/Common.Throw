@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="WaitHandleCannotBeOpenedException()"/>
    /// <exception cref="WaitHandleCannotBeOpenedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void WaitHandleCannotBeOpened(this IThrow @throw)
+   public static void WaitHandleCannotBeOpened(this IThrowFor @throw)
    {
       throw new WaitHandleCannotBeOpenedException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="WaitHandleCannotBeOpenedException(string)"/>
    /// <exception cref="WaitHandleCannotBeOpenedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void WaitHandleCannotBeOpened(this IThrow @throw, string? message)
+   public static void WaitHandleCannotBeOpened(this IThrowFor @throw, string? message)
    {
       throw new WaitHandleCannotBeOpenedException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="WaitHandleCannotBeOpenedException(string, Exception)"/>
    /// <exception cref="WaitHandleCannotBeOpenedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void WaitHandleCannotBeOpened(this IThrow @throw, string? message, Exception? innerException)
+   public static void WaitHandleCannotBeOpened(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new WaitHandleCannotBeOpenedException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="WaitHandleCannotBeOpenedException()"/>
    /// <exception cref="WaitHandleCannotBeOpenedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T WaitHandleCannotBeOpened<T>(this IThrow @throw)
+   public static T WaitHandleCannotBeOpened<T>(this IThrowFor @throw)
    {
       WaitHandleCannotBeOpened(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="WaitHandleCannotBeOpenedException(string)"/>
    /// <exception cref="WaitHandleCannotBeOpenedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T WaitHandleCannotBeOpened<T>(this IThrow @throw, string? message)
+   public static T WaitHandleCannotBeOpened<T>(this IThrowFor @throw, string? message)
    {
       WaitHandleCannotBeOpened(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="WaitHandleCannotBeOpenedException(string, Exception)"/>
    /// <exception cref="WaitHandleCannotBeOpenedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T WaitHandleCannotBeOpened<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T WaitHandleCannotBeOpened<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       WaitHandleCannotBeOpened(@throw, message, innerException);
       return default!;

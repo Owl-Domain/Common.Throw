@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="BadImageFormatException()"/>
    /// <exception cref="BadImageFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void BadImageFormat(this IThrow @throw)
+   public static void BadImageFormat(this IThrowFor @throw)
    {
       throw new BadImageFormatException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="BadImageFormatException(string)"/>
    /// <exception cref="BadImageFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void BadImageFormat(this IThrow @throw, string? message)
+   public static void BadImageFormat(this IThrowFor @throw, string? message)
    {
       throw new BadImageFormatException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="BadImageFormatException(string, Exception)"/>
    /// <exception cref="BadImageFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void BadImageFormat(this IThrow @throw, string? message, Exception? inner)
+   public static void BadImageFormat(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new BadImageFormatException(message, inner);
    }
@@ -30,7 +30,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="BadImageFormatException(string, string)"/>
    /// <exception cref="BadImageFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void BadImageFormat(this IThrow @throw, string? message, string? fileName)
+   public static void BadImageFormat(this IThrowFor @throw, string? message, string? fileName)
    {
       throw new BadImageFormatException(message, fileName);
    }
@@ -38,7 +38,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="BadImageFormatException(string, string, Exception)"/>
    /// <exception cref="BadImageFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void BadImageFormat(this IThrow @throw, string? message, string? fileName, Exception? inner)
+   public static void BadImageFormat(this IThrowFor @throw, string? message, string? fileName, Exception? inner)
    {
       throw new BadImageFormatException(message, fileName, inner);
    }
@@ -48,7 +48,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="BadImageFormatException()"/>
    /// <exception cref="BadImageFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T BadImageFormat<T>(this IThrow @throw)
+   public static T BadImageFormat<T>(this IThrowFor @throw)
    {
       BadImageFormat(@throw);
       return default!;
@@ -57,7 +57,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="BadImageFormatException(string)"/>
    /// <exception cref="BadImageFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T BadImageFormat<T>(this IThrow @throw, string? message)
+   public static T BadImageFormat<T>(this IThrowFor @throw, string? message)
    {
       BadImageFormat(@throw, message);
       return default!;
@@ -66,7 +66,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="BadImageFormatException(string, Exception)"/>
    /// <exception cref="BadImageFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T BadImageFormat<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T BadImageFormat<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       BadImageFormat(@throw, message, inner);
       return default!;
@@ -75,7 +75,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="BadImageFormatException(string, string)"/>
    /// <exception cref="BadImageFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T BadImageFormat<T>(this IThrow @throw, string? message, string? fileName)
+   public static T BadImageFormat<T>(this IThrowFor @throw, string? message, string? fileName)
    {
       BadImageFormat(@throw, message, fileName);
       return default!;
@@ -84,7 +84,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="BadImageFormatException(string, string, Exception)"/>
    /// <exception cref="BadImageFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T BadImageFormat<T>(this IThrow @throw, string? message, string? fileName, Exception? inner)
+   public static T BadImageFormat<T>(this IThrowFor @throw, string? message, string? fileName, Exception? inner)
    {
       BadImageFormat(@throw, message, fileName, inner);
       return default!;

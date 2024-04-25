@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileNotFoundException()"/>
    /// <exception cref="FileNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void FileNotFound(this IThrow @throw)
+   public static void FileNotFound(this IThrowFor @throw)
    {
       throw new FileNotFoundException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileNotFoundException(string)"/>
    /// <exception cref="FileNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void FileNotFound(this IThrow @throw, string? message)
+   public static void FileNotFound(this IThrowFor @throw, string? message)
    {
       throw new FileNotFoundException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileNotFoundException(string, Exception)"/>
    /// <exception cref="FileNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void FileNotFound(this IThrow @throw, string? message, Exception? innerException)
+   public static void FileNotFound(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new FileNotFoundException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileNotFoundException(string, string)"/>
    /// <exception cref="FileNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void FileNotFound(this IThrow @throw, string? message, string? fileName)
+   public static void FileNotFound(this IThrowFor @throw, string? message, string? fileName)
    {
       throw new FileNotFoundException(message, fileName);
    }
@@ -40,7 +40,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileNotFoundException(string, string, Exception)"/>
    /// <exception cref="FileNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void FileNotFound(this IThrow @throw, string? message, string? fileName, Exception? innerException)
+   public static void FileNotFound(this IThrowFor @throw, string? message, string? fileName, Exception? innerException)
    {
       throw new FileNotFoundException(message, fileName, innerException);
    }
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileNotFoundException()"/>
    /// <exception cref="FileNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T FileNotFound<T>(this IThrow @throw)
+   public static T FileNotFound<T>(this IThrowFor @throw)
    {
       FileNotFound(@throw);
       return default!;
@@ -59,7 +59,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileNotFoundException(string)"/>
    /// <exception cref="FileNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T FileNotFound<T>(this IThrow @throw, string? message)
+   public static T FileNotFound<T>(this IThrowFor @throw, string? message)
    {
       FileNotFound(@throw, message);
       return default!;
@@ -68,7 +68,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileNotFoundException(string, Exception)"/>
    /// <exception cref="FileNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T FileNotFound<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T FileNotFound<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       FileNotFound(@throw, message, innerException);
       return default!;
@@ -77,7 +77,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileNotFoundException(string, string)"/>
    /// <exception cref="FileNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T FileNotFound<T>(this IThrow @throw, string? message, string? fileName)
+   public static T FileNotFound<T>(this IThrowFor @throw, string? message, string? fileName)
    {
       FileNotFound(@throw, message, fileName);
       return default!;
@@ -86,7 +86,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileNotFoundException(string, string, Exception)"/>
    /// <exception cref="FileNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T FileNotFound<T>(this IThrow @throw, string? message, string? fileName, Exception? innerException)
+   public static T FileNotFound<T>(this IThrowFor @throw, string? message, string? fileName, Exception? innerException)
    {
       FileNotFound(@throw, message, fileName, innerException);
       return default!;

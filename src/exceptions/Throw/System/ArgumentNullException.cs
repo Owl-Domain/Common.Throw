@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentNullException()"/>
    /// <exception cref="ArgumentNullException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ArgumentNull(this IThrow @throw)
+   public static void ArgumentNull(this IThrowFor @throw)
    {
       throw new ArgumentNullException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentNullException(string)"/>
    /// <exception cref="ArgumentNullException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ArgumentNull(this IThrow @throw, string? paramName)
+   public static void ArgumentNull(this IThrowFor @throw, string? paramName)
    {
       throw new ArgumentNullException(paramName);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentNullException(string, Exception)"/>
    /// <exception cref="ArgumentNullException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ArgumentNull(this IThrow @throw, string? message, Exception? innerException)
+   public static void ArgumentNull(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new ArgumentNullException(message, innerException);
    }
@@ -30,7 +30,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentNullException(string, string)"/>
    /// <exception cref="ArgumentNullException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ArgumentNull(this IThrow @throw, string? paramName, string? message)
+   public static void ArgumentNull(this IThrowFor @throw, string? paramName, string? message)
    {
       throw new ArgumentNullException(paramName, message);
    }
@@ -40,7 +40,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentNullException()"/>
    /// <exception cref="ArgumentNullException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ArgumentNull<T>(this IThrow @throw)
+   public static T ArgumentNull<T>(this IThrowFor @throw)
    {
       ArgumentNull(@throw);
       return default!;
@@ -49,7 +49,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentNullException(string)"/>
    /// <exception cref="ArgumentNullException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ArgumentNull<T>(this IThrow @throw, string? paramName)
+   public static T ArgumentNull<T>(this IThrowFor @throw, string? paramName)
    {
       ArgumentNull(@throw, paramName);
       return default!;
@@ -58,7 +58,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentNullException(string, Exception)"/>
    /// <exception cref="ArgumentNullException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ArgumentNull<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T ArgumentNull<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       ArgumentNull(@throw, message, innerException);
       return default!;
@@ -67,7 +67,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArgumentNullException(string, string)"/>
    /// <exception cref="ArgumentNullException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ArgumentNull<T>(this IThrow @throw, string? paramName, string? message)
+   public static T ArgumentNull<T>(this IThrowFor @throw, string? paramName, string? message)
    {
       ArgumentNull(@throw, paramName, message);
       return default!;

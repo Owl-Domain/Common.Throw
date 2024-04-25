@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ApplicationException()"/>
    /// <exception cref="ApplicationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Application(this IThrow @throw)
+   public static void Application(this IThrowFor @throw)
    {
       throw new ApplicationException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ApplicationException(string)"/>
    /// <exception cref="ApplicationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Application(this IThrow @throw, string? message)
+   public static void Application(this IThrowFor @throw, string? message)
    {
       throw new ApplicationException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ApplicationException(string, Exception)"/>
    /// <exception cref="ApplicationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Application(this IThrow @throw, string? message, Exception? innerException)
+   public static void Application(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new ApplicationException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ApplicationException()"/>
    /// <exception cref="ApplicationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Application<T>(this IThrow @throw)
+   public static T Application<T>(this IThrowFor @throw)
    {
       Application(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ApplicationException(string)"/>
    /// <exception cref="ApplicationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Application<T>(this IThrow @throw, string? message)
+   public static T Application<T>(this IThrowFor @throw, string? message)
    {
       Application(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ApplicationException(string, Exception)"/>
    /// <exception cref="ApplicationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Application<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T Application<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       Application(@throw, message, innerException);
       return default!;

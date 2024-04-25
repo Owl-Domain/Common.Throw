@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMethodException()"/>
    /// <exception cref="MissingMethodException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingMethod(this IThrow @throw)
+   public static void MissingMethod(this IThrowFor @throw)
    {
       throw new MissingMethodException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMethodException(string)"/>
    /// <exception cref="MissingMethodException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingMethod(this IThrow @throw, string? message)
+   public static void MissingMethod(this IThrowFor @throw, string? message)
    {
       throw new MissingMethodException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMethodException(string, Exception)"/>
    /// <exception cref="MissingMethodException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingMethod(this IThrow @throw, string? message, Exception? inner)
+   public static void MissingMethod(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new MissingMethodException(message, inner);
    }
@@ -30,7 +30,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMethodException(string, string)"/>
    /// <exception cref="MissingMethodException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingMethod(this IThrow @throw, string? className, string? methodName)
+   public static void MissingMethod(this IThrowFor @throw, string? className, string? methodName)
    {
       throw new MissingMethodException(className, methodName);
    }
@@ -40,7 +40,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMethodException()"/>
    /// <exception cref="MissingMethodException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingMethod<T>(this IThrow @throw)
+   public static T MissingMethod<T>(this IThrowFor @throw)
    {
       MissingMethod(@throw);
       return default!;
@@ -49,7 +49,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMethodException(string)"/>
    /// <exception cref="MissingMethodException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingMethod<T>(this IThrow @throw, string? message)
+   public static T MissingMethod<T>(this IThrowFor @throw, string? message)
    {
       MissingMethod(@throw, message);
       return default!;
@@ -58,7 +58,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMethodException(string, Exception)"/>
    /// <exception cref="MissingMethodException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingMethod<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T MissingMethod<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       MissingMethod(@throw, message, inner);
       return default!;
@@ -67,7 +67,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMethodException(string, string)"/>
    /// <exception cref="MissingMethodException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingMethod<T>(this IThrow @throw, string? className, string? methodName)
+   public static T MissingMethod<T>(this IThrowFor @throw, string? className, string? methodName)
    {
       MissingMethod(@throw, className, methodName);
       return default!;

@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SafeArrayRankMismatchException()"/>
    /// <exception cref="SafeArrayRankMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SafeArrayRankMismatch(this IThrow @throw)
+   public static void SafeArrayRankMismatch(this IThrowFor @throw)
    {
       throw new SafeArrayRankMismatchException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SafeArrayRankMismatchException(string)"/>
    /// <exception cref="SafeArrayRankMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SafeArrayRankMismatch(this IThrow @throw, string? message)
+   public static void SafeArrayRankMismatch(this IThrowFor @throw, string? message)
    {
       throw new SafeArrayRankMismatchException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SafeArrayRankMismatchException(string, Exception)"/>
    /// <exception cref="SafeArrayRankMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SafeArrayRankMismatch(this IThrow @throw, string? message, Exception? inner)
+   public static void SafeArrayRankMismatch(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new SafeArrayRankMismatchException(message, inner);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SafeArrayRankMismatchException()"/>
    /// <exception cref="SafeArrayRankMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SafeArrayRankMismatch<T>(this IThrow @throw)
+   public static T SafeArrayRankMismatch<T>(this IThrowFor @throw)
    {
       SafeArrayRankMismatch(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SafeArrayRankMismatchException(string)"/>
    /// <exception cref="SafeArrayRankMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SafeArrayRankMismatch<T>(this IThrow @throw, string? message)
+   public static T SafeArrayRankMismatch<T>(this IThrowFor @throw, string? message)
    {
       SafeArrayRankMismatch(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SafeArrayRankMismatchException(string, Exception)"/>
    /// <exception cref="SafeArrayRankMismatchException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SafeArrayRankMismatch<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T SafeArrayRankMismatch<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       SafeArrayRankMismatch(@throw, message, inner);
       return default!;

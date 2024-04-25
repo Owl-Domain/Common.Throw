@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NullReferenceException()"/>
    /// <exception cref="NullReferenceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void NullReference(this IThrow @throw)
+   public static void NullReference(this IThrowFor @throw)
    {
       throw new NullReferenceException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NullReferenceException(string)"/>
    /// <exception cref="NullReferenceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void NullReference(this IThrow @throw, string? message)
+   public static void NullReference(this IThrowFor @throw, string? message)
    {
       throw new NullReferenceException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NullReferenceException(string, Exception)"/>
    /// <exception cref="NullReferenceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void NullReference(this IThrow @throw, string? message, Exception? innerException)
+   public static void NullReference(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new NullReferenceException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NullReferenceException()"/>
    /// <exception cref="NullReferenceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T NullReference<T>(this IThrow @throw)
+   public static T NullReference<T>(this IThrowFor @throw)
    {
       NullReference(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NullReferenceException(string)"/>
    /// <exception cref="NullReferenceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T NullReference<T>(this IThrow @throw, string? message)
+   public static T NullReference<T>(this IThrowFor @throw, string? message)
    {
       NullReference(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NullReferenceException(string, Exception)"/>
    /// <exception cref="NullReferenceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T NullReference<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T NullReference<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       NullReference(@throw, message, innerException);
       return default!;

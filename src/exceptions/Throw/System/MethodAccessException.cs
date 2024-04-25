@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MethodAccessException()"/>
    /// <exception cref="MethodAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MethodAccess(this IThrow @throw)
+   public static void MethodAccess(this IThrowFor @throw)
    {
       throw new MethodAccessException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MethodAccessException(string)"/>
    /// <exception cref="MethodAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MethodAccess(this IThrow @throw, string? message)
+   public static void MethodAccess(this IThrowFor @throw, string? message)
    {
       throw new MethodAccessException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MethodAccessException(string, Exception)"/>
    /// <exception cref="MethodAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MethodAccess(this IThrow @throw, string? message, Exception? inner)
+   public static void MethodAccess(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new MethodAccessException(message, inner);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MethodAccessException()"/>
    /// <exception cref="MethodAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MethodAccess<T>(this IThrow @throw)
+   public static T MethodAccess<T>(this IThrowFor @throw)
    {
       MethodAccess(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MethodAccessException(string)"/>
    /// <exception cref="MethodAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MethodAccess<T>(this IThrow @throw, string? message)
+   public static T MethodAccess<T>(this IThrowFor @throw, string? message)
    {
       MethodAccess(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MethodAccessException(string, Exception)"/>
    /// <exception cref="MethodAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MethodAccess<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T MethodAccess<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       MethodAccess(@throw, message, inner);
       return default!;

@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMemberException()"/>
    /// <exception cref="MissingMemberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingMember(this IThrow @throw)
+   public static void MissingMember(this IThrowFor @throw)
    {
       throw new MissingMemberException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMemberException(string)"/>
    /// <exception cref="MissingMemberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingMember(this IThrow @throw, string? message)
+   public static void MissingMember(this IThrowFor @throw, string? message)
    {
       throw new MissingMemberException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMemberException(string, Exception)"/>
    /// <exception cref="MissingMemberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingMember(this IThrow @throw, string? message, Exception? inner)
+   public static void MissingMember(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new MissingMemberException(message, inner);
    }
@@ -30,7 +30,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMemberException(string, string)"/>
    /// <exception cref="MissingMemberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingMember(this IThrow @throw, string? className, string? memberName)
+   public static void MissingMember(this IThrowFor @throw, string? className, string? memberName)
    {
       throw new MissingMemberException(className, memberName);
    }
@@ -40,7 +40,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMemberException()"/>
    /// <exception cref="MissingMemberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingMember<T>(this IThrow @throw)
+   public static T MissingMember<T>(this IThrowFor @throw)
    {
       MissingMember(@throw);
       return default!;
@@ -49,7 +49,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMemberException(string)"/>
    /// <exception cref="MissingMemberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingMember<T>(this IThrow @throw, string? message)
+   public static T MissingMember<T>(this IThrowFor @throw, string? message)
    {
       MissingMember(@throw, message);
       return default!;
@@ -58,7 +58,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMemberException(string, Exception)"/>
    /// <exception cref="MissingMemberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingMember<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T MissingMember<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       MissingMember(@throw, message, inner);
       return default!;
@@ -67,7 +67,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingMemberException(string, string)"/>
    /// <exception cref="MissingMemberException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingMember<T>(this IThrow @throw, string? className, string? memberName)
+   public static T MissingMember<T>(this IThrowFor @throw, string? className, string? memberName)
    {
       MissingMember(@throw, className, memberName);
       return default!;

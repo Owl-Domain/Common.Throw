@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="Win32Exception()"/>
    /// <exception cref="Win32Exception"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Win32(this IThrow @throw)
+   public static void Win32(this IThrowFor @throw)
    {
       throw new Win32Exception();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="Win32Exception(int)"/>
    /// <exception cref="Win32Exception"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Win32(this IThrow @throw, int error)
+   public static void Win32(this IThrowFor @throw, int error)
    {
       throw new Win32Exception(error);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="Win32Exception(int, string)"/>
    /// <exception cref="Win32Exception"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Win32(this IThrow @throw, int error, string? message)
+   public static void Win32(this IThrowFor @throw, int error, string? message)
    {
       throw new Win32Exception(error, message);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="Win32Exception(string)"/>
    /// <exception cref="Win32Exception"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Win32(this IThrow @throw, string? message)
+   public static void Win32(this IThrowFor @throw, string? message)
    {
       throw new Win32Exception(message);
    }
@@ -40,7 +40,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="Win32Exception(string, Exception)"/>
    /// <exception cref="Win32Exception"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Win32(this IThrow @throw, string? message, Exception? innerException)
+   public static void Win32(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new Win32Exception(message, innerException);
    }
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="Win32Exception()"/>
    /// <exception cref="Win32Exception"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Win32<T>(this IThrow @throw)
+   public static T Win32<T>(this IThrowFor @throw)
    {
       Win32(@throw);
       return default!;
@@ -59,7 +59,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="Win32Exception(int)"/>
    /// <exception cref="Win32Exception"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Win32<T>(this IThrow @throw, int error)
+   public static T Win32<T>(this IThrowFor @throw, int error)
    {
       Win32(@throw, error);
       return default!;
@@ -68,7 +68,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="Win32Exception(int, string)"/>
    /// <exception cref="Win32Exception"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Win32<T>(this IThrow @throw, int error, string? message)
+   public static T Win32<T>(this IThrowFor @throw, int error, string? message)
    {
       Win32(@throw, error, message);
       return default!;
@@ -77,7 +77,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="Win32Exception(string)"/>
    /// <exception cref="Win32Exception"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Win32<T>(this IThrow @throw, string? message)
+   public static T Win32<T>(this IThrowFor @throw, string? message)
    {
       Win32(@throw, message);
       return default!;
@@ -86,7 +86,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="Win32Exception(string, Exception)"/>
    /// <exception cref="Win32Exception"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Win32<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T Win32<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       Win32(@throw, message, innerException);
       return default!;

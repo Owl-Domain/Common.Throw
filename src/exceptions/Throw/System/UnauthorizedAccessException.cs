@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="UnauthorizedAccessException()"/>
    /// <exception cref="UnauthorizedAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void UnauthorizedAccess(this IThrow @throw)
+   public static void UnauthorizedAccess(this IThrowFor @throw)
    {
       throw new UnauthorizedAccessException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="UnauthorizedAccessException(string)"/>
    /// <exception cref="UnauthorizedAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void UnauthorizedAccess(this IThrow @throw, string? message)
+   public static void UnauthorizedAccess(this IThrowFor @throw, string? message)
    {
       throw new UnauthorizedAccessException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="UnauthorizedAccessException(string, Exception)"/>
    /// <exception cref="UnauthorizedAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void UnauthorizedAccess(this IThrow @throw, string? message, Exception? inner)
+   public static void UnauthorizedAccess(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new UnauthorizedAccessException(message, inner);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="UnauthorizedAccessException()"/>
    /// <exception cref="UnauthorizedAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T UnauthorizedAccess<T>(this IThrow @throw)
+   public static T UnauthorizedAccess<T>(this IThrowFor @throw)
    {
       UnauthorizedAccess(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="UnauthorizedAccessException(string)"/>
    /// <exception cref="UnauthorizedAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T UnauthorizedAccess<T>(this IThrow @throw, string? message)
+   public static T UnauthorizedAccess<T>(this IThrowFor @throw, string? message)
    {
       UnauthorizedAccess(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="UnauthorizedAccessException(string, Exception)"/>
    /// <exception cref="UnauthorizedAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T UnauthorizedAccess<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T UnauthorizedAccess<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       UnauthorizedAccess(@throw, message, inner);
       return default!;

@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AppDomainUnloadedException()"/>
    /// <exception cref="AppDomainUnloadedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void AppDomainUnloaded(this IThrow @throw)
+   public static void AppDomainUnloaded(this IThrowFor @throw)
    {
       throw new AppDomainUnloadedException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AppDomainUnloadedException(string)"/>
    /// <exception cref="AppDomainUnloadedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void AppDomainUnloaded(this IThrow @throw, string? message)
+   public static void AppDomainUnloaded(this IThrowFor @throw, string? message)
    {
       throw new AppDomainUnloadedException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AppDomainUnloadedException(string, Exception)"/>
    /// <exception cref="AppDomainUnloadedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void AppDomainUnloaded(this IThrow @throw, string? message, Exception? innerException)
+   public static void AppDomainUnloaded(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new AppDomainUnloadedException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AppDomainUnloadedException()"/>
    /// <exception cref="AppDomainUnloadedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T AppDomainUnloaded<T>(this IThrow @throw)
+   public static T AppDomainUnloaded<T>(this IThrowFor @throw)
    {
       AppDomainUnloaded(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AppDomainUnloadedException(string)"/>
    /// <exception cref="AppDomainUnloadedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T AppDomainUnloaded<T>(this IThrow @throw, string? message)
+   public static T AppDomainUnloaded<T>(this IThrowFor @throw, string? message)
    {
       AppDomainUnloaded(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AppDomainUnloadedException(string, Exception)"/>
    /// <exception cref="AppDomainUnloadedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T AppDomainUnloaded<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T AppDomainUnloaded<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       AppDomainUnloaded(@throw, message, innerException);
       return default!;

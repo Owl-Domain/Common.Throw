@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DecoderFallbackException()"/>
    /// <exception cref="DecoderFallbackException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void DecoderFallback(this IThrow @throw)
+   public static void DecoderFallback(this IThrowFor @throw)
    {
       throw new DecoderFallbackException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DecoderFallbackException(string)"/>
    /// <exception cref="DecoderFallbackException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void DecoderFallback(this IThrow @throw, string? message)
+   public static void DecoderFallback(this IThrowFor @throw, string? message)
    {
       throw new DecoderFallbackException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DecoderFallbackException(string, Exception)"/>
    /// <exception cref="DecoderFallbackException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void DecoderFallback(this IThrow @throw, string? message, Exception? innerException)
+   public static void DecoderFallback(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new DecoderFallbackException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DecoderFallbackException(string, Byte[], int)"/>
    /// <exception cref="DecoderFallbackException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void DecoderFallback(this IThrow @throw, string? message, Byte[]? bytesUnknown, int index)
+   public static void DecoderFallback(this IThrowFor @throw, string? message, Byte[]? bytesUnknown, int index)
    {
       throw new DecoderFallbackException(message, bytesUnknown, index);
    }
@@ -42,7 +42,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DecoderFallbackException()"/>
    /// <exception cref="DecoderFallbackException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T DecoderFallback<T>(this IThrow @throw)
+   public static T DecoderFallback<T>(this IThrowFor @throw)
    {
       DecoderFallback(@throw);
       return default!;
@@ -51,7 +51,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DecoderFallbackException(string)"/>
    /// <exception cref="DecoderFallbackException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T DecoderFallback<T>(this IThrow @throw, string? message)
+   public static T DecoderFallback<T>(this IThrowFor @throw, string? message)
    {
       DecoderFallback(@throw, message);
       return default!;
@@ -60,7 +60,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DecoderFallbackException(string, Exception)"/>
    /// <exception cref="DecoderFallbackException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T DecoderFallback<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T DecoderFallback<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       DecoderFallback(@throw, message, innerException);
       return default!;
@@ -69,7 +69,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DecoderFallbackException(string, Byte[], int)"/>
    /// <exception cref="DecoderFallbackException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T DecoderFallback<T>(this IThrow @throw, string? message, Byte[]? bytesUnknown, int index)
+   public static T DecoderFallback<T>(this IThrowFor @throw, string? message, Byte[]? bytesUnknown, int index)
    {
       DecoderFallback(@throw, message, bytesUnknown, index);
       return default!;

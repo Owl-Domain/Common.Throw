@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MarshalDirectiveException()"/>
    /// <exception cref="MarshalDirectiveException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MarshalDirective(this IThrow @throw)
+   public static void MarshalDirective(this IThrowFor @throw)
    {
       throw new MarshalDirectiveException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MarshalDirectiveException(string)"/>
    /// <exception cref="MarshalDirectiveException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MarshalDirective(this IThrow @throw, string? message)
+   public static void MarshalDirective(this IThrowFor @throw, string? message)
    {
       throw new MarshalDirectiveException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MarshalDirectiveException(string, Exception)"/>
    /// <exception cref="MarshalDirectiveException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MarshalDirective(this IThrow @throw, string? message, Exception? inner)
+   public static void MarshalDirective(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new MarshalDirectiveException(message, inner);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MarshalDirectiveException()"/>
    /// <exception cref="MarshalDirectiveException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MarshalDirective<T>(this IThrow @throw)
+   public static T MarshalDirective<T>(this IThrowFor @throw)
    {
       MarshalDirective(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MarshalDirectiveException(string)"/>
    /// <exception cref="MarshalDirectiveException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MarshalDirective<T>(this IThrow @throw, string? message)
+   public static T MarshalDirective<T>(this IThrowFor @throw, string? message)
    {
       MarshalDirective(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MarshalDirectiveException(string, Exception)"/>
    /// <exception cref="MarshalDirectiveException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MarshalDirective<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T MarshalDirective<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       MarshalDirective(@throw, message, inner);
       return default!;

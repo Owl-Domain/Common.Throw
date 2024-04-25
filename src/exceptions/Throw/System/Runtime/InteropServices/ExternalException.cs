@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ExternalException()"/>
    /// <exception cref="ExternalException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void External(this IThrow @throw)
+   public static void External(this IThrowFor @throw)
    {
       throw new ExternalException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ExternalException(string)"/>
    /// <exception cref="ExternalException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void External(this IThrow @throw, string? message)
+   public static void External(this IThrowFor @throw, string? message)
    {
       throw new ExternalException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ExternalException(string, Exception)"/>
    /// <exception cref="ExternalException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void External(this IThrow @throw, string? message, Exception? inner)
+   public static void External(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new ExternalException(message, inner);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ExternalException(string, int)"/>
    /// <exception cref="ExternalException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void External(this IThrow @throw, string? message, int errorCode)
+   public static void External(this IThrowFor @throw, string? message, int errorCode)
    {
       throw new ExternalException(message, errorCode);
    }
@@ -42,7 +42,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ExternalException()"/>
    /// <exception cref="ExternalException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T External<T>(this IThrow @throw)
+   public static T External<T>(this IThrowFor @throw)
    {
       External(@throw);
       return default!;
@@ -51,7 +51,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ExternalException(string)"/>
    /// <exception cref="ExternalException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T External<T>(this IThrow @throw, string? message)
+   public static T External<T>(this IThrowFor @throw, string? message)
    {
       External(@throw, message);
       return default!;
@@ -60,7 +60,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ExternalException(string, Exception)"/>
    /// <exception cref="ExternalException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T External<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T External<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       External(@throw, message, inner);
       return default!;
@@ -69,7 +69,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ExternalException(string, int)"/>
    /// <exception cref="ExternalException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T External<T>(this IThrow @throw, string? message, int errorCode)
+   public static T External<T>(this IThrowFor @throw, string? message, int errorCode)
    {
       External(@throw, message, errorCode);
       return default!;

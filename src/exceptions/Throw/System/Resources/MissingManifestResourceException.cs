@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingManifestResourceException()"/>
    /// <exception cref="MissingManifestResourceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingManifestResource(this IThrow @throw)
+   public static void MissingManifestResource(this IThrowFor @throw)
    {
       throw new MissingManifestResourceException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingManifestResourceException(string)"/>
    /// <exception cref="MissingManifestResourceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingManifestResource(this IThrow @throw, string? message)
+   public static void MissingManifestResource(this IThrowFor @throw, string? message)
    {
       throw new MissingManifestResourceException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingManifestResourceException(string, Exception)"/>
    /// <exception cref="MissingManifestResourceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingManifestResource(this IThrow @throw, string? message, Exception? inner)
+   public static void MissingManifestResource(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new MissingManifestResourceException(message, inner);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingManifestResourceException()"/>
    /// <exception cref="MissingManifestResourceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingManifestResource<T>(this IThrow @throw)
+   public static T MissingManifestResource<T>(this IThrowFor @throw)
    {
       MissingManifestResource(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingManifestResourceException(string)"/>
    /// <exception cref="MissingManifestResourceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingManifestResource<T>(this IThrow @throw, string? message)
+   public static T MissingManifestResource<T>(this IThrowFor @throw, string? message)
    {
       MissingManifestResource(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingManifestResourceException(string, Exception)"/>
    /// <exception cref="MissingManifestResourceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingManifestResource<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T MissingManifestResource<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       MissingManifestResource(@throw, message, inner);
       return default!;

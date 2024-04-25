@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotImplementedException()"/>
    /// <exception cref="NotImplementedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void NotImplemented(this IThrow @throw)
+   public static void NotImplemented(this IThrowFor @throw)
    {
       throw new NotImplementedException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotImplementedException(string)"/>
    /// <exception cref="NotImplementedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void NotImplemented(this IThrow @throw, string? message)
+   public static void NotImplemented(this IThrowFor @throw, string? message)
    {
       throw new NotImplementedException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotImplementedException(string, Exception)"/>
    /// <exception cref="NotImplementedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void NotImplemented(this IThrow @throw, string? message, Exception? inner)
+   public static void NotImplemented(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new NotImplementedException(message, inner);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotImplementedException()"/>
    /// <exception cref="NotImplementedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T NotImplemented<T>(this IThrow @throw)
+   public static T NotImplemented<T>(this IThrowFor @throw)
    {
       NotImplemented(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotImplementedException(string)"/>
    /// <exception cref="NotImplementedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T NotImplemented<T>(this IThrow @throw, string? message)
+   public static T NotImplemented<T>(this IThrowFor @throw, string? message)
    {
       NotImplemented(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="NotImplementedException(string, Exception)"/>
    /// <exception cref="NotImplementedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T NotImplemented<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T NotImplemented<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       NotImplemented(@throw, message, inner);
       return default!;

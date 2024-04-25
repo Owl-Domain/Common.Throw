@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ContextMarshalException()"/>
    /// <exception cref="ContextMarshalException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ContextMarshal(this IThrow @throw)
+   public static void ContextMarshal(this IThrowFor @throw)
    {
       throw new ContextMarshalException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ContextMarshalException(string)"/>
    /// <exception cref="ContextMarshalException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ContextMarshal(this IThrow @throw, string? message)
+   public static void ContextMarshal(this IThrowFor @throw, string? message)
    {
       throw new ContextMarshalException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ContextMarshalException(string, Exception)"/>
    /// <exception cref="ContextMarshalException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void ContextMarshal(this IThrow @throw, string? message, Exception? inner)
+   public static void ContextMarshal(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new ContextMarshalException(message, inner);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ContextMarshalException()"/>
    /// <exception cref="ContextMarshalException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ContextMarshal<T>(this IThrow @throw)
+   public static T ContextMarshal<T>(this IThrowFor @throw)
    {
       ContextMarshal(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ContextMarshalException(string)"/>
    /// <exception cref="ContextMarshalException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ContextMarshal<T>(this IThrow @throw, string? message)
+   public static T ContextMarshal<T>(this IThrowFor @throw, string? message)
    {
       ContextMarshal(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ContextMarshalException(string, Exception)"/>
    /// <exception cref="ContextMarshalException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T ContextMarshal<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T ContextMarshal<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       ContextMarshal(@throw, message, inner);
       return default!;

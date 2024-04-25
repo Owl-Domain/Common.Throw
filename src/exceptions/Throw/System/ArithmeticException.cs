@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArithmeticException()"/>
    /// <exception cref="ArithmeticException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Arithmetic(this IThrow @throw)
+   public static void Arithmetic(this IThrowFor @throw)
    {
       throw new ArithmeticException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArithmeticException(string)"/>
    /// <exception cref="ArithmeticException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Arithmetic(this IThrow @throw, string? message)
+   public static void Arithmetic(this IThrowFor @throw, string? message)
    {
       throw new ArithmeticException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArithmeticException(string, Exception)"/>
    /// <exception cref="ArithmeticException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Arithmetic(this IThrow @throw, string? message, Exception? innerException)
+   public static void Arithmetic(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new ArithmeticException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArithmeticException()"/>
    /// <exception cref="ArithmeticException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Arithmetic<T>(this IThrow @throw)
+   public static T Arithmetic<T>(this IThrowFor @throw)
    {
       Arithmetic(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArithmeticException(string)"/>
    /// <exception cref="ArithmeticException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Arithmetic<T>(this IThrow @throw, string? message)
+   public static T Arithmetic<T>(this IThrowFor @throw, string? message)
    {
       Arithmetic(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="ArithmeticException(string, Exception)"/>
    /// <exception cref="ArithmeticException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Arithmetic<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T Arithmetic<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       Arithmetic(@throw, message, innerException);
       return default!;

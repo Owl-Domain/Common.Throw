@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InsufficientMemoryException()"/>
    /// <exception cref="InsufficientMemoryException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InsufficientMemory(this IThrow @throw)
+   public static void InsufficientMemory(this IThrowFor @throw)
    {
       throw new InsufficientMemoryException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InsufficientMemoryException(string)"/>
    /// <exception cref="InsufficientMemoryException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InsufficientMemory(this IThrow @throw, string? message)
+   public static void InsufficientMemory(this IThrowFor @throw, string? message)
    {
       throw new InsufficientMemoryException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InsufficientMemoryException(string, Exception)"/>
    /// <exception cref="InsufficientMemoryException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InsufficientMemory(this IThrow @throw, string? message, Exception? innerException)
+   public static void InsufficientMemory(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new InsufficientMemoryException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InsufficientMemoryException()"/>
    /// <exception cref="InsufficientMemoryException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InsufficientMemory<T>(this IThrow @throw)
+   public static T InsufficientMemory<T>(this IThrowFor @throw)
    {
       InsufficientMemory(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InsufficientMemoryException(string)"/>
    /// <exception cref="InsufficientMemoryException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InsufficientMemory<T>(this IThrow @throw, string? message)
+   public static T InsufficientMemory<T>(this IThrowFor @throw, string? message)
    {
       InsufficientMemory(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InsufficientMemoryException(string, Exception)"/>
    /// <exception cref="InsufficientMemoryException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InsufficientMemory<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T InsufficientMemory<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       InsufficientMemory(@throw, message, innerException);
       return default!;

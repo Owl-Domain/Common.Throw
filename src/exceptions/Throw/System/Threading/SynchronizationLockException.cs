@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SynchronizationLockException()"/>
    /// <exception cref="SynchronizationLockException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SynchronizationLock(this IThrow @throw)
+   public static void SynchronizationLock(this IThrowFor @throw)
    {
       throw new SynchronizationLockException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SynchronizationLockException(string)"/>
    /// <exception cref="SynchronizationLockException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SynchronizationLock(this IThrow @throw, string? message)
+   public static void SynchronizationLock(this IThrowFor @throw, string? message)
    {
       throw new SynchronizationLockException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SynchronizationLockException(string, Exception)"/>
    /// <exception cref="SynchronizationLockException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SynchronizationLock(this IThrow @throw, string? message, Exception? innerException)
+   public static void SynchronizationLock(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new SynchronizationLockException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SynchronizationLockException()"/>
    /// <exception cref="SynchronizationLockException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SynchronizationLock<T>(this IThrow @throw)
+   public static T SynchronizationLock<T>(this IThrowFor @throw)
    {
       SynchronizationLock(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SynchronizationLockException(string)"/>
    /// <exception cref="SynchronizationLockException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SynchronizationLock<T>(this IThrow @throw, string? message)
+   public static T SynchronizationLock<T>(this IThrowFor @throw, string? message)
    {
       SynchronizationLock(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SynchronizationLockException(string, Exception)"/>
    /// <exception cref="SynchronizationLockException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SynchronizationLock<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T SynchronizationLock<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       SynchronizationLock(@throw, message, innerException);
       return default!;

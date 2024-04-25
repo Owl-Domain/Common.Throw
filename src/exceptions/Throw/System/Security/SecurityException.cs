@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SecurityException()"/>
    /// <exception cref="SecurityException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Security(this IThrow @throw)
+   public static void Security(this IThrowFor @throw)
    {
       throw new SecurityException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SecurityException(string)"/>
    /// <exception cref="SecurityException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Security(this IThrow @throw, string? message)
+   public static void Security(this IThrowFor @throw, string? message)
    {
       throw new SecurityException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SecurityException(string, Exception)"/>
    /// <exception cref="SecurityException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Security(this IThrow @throw, string? message, Exception? inner)
+   public static void Security(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new SecurityException(message, inner);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SecurityException(string, Type)"/>
    /// <exception cref="SecurityException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Security(this IThrow @throw, string? message, Type? type)
+   public static void Security(this IThrowFor @throw, string? message, Type? type)
    {
       throw new SecurityException(message, type);
    }
@@ -40,7 +40,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SecurityException(string, Type, string)"/>
    /// <exception cref="SecurityException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Security(this IThrow @throw, string? message, Type? type, string? state)
+   public static void Security(this IThrowFor @throw, string? message, Type? type, string? state)
    {
       throw new SecurityException(message, type, state);
    }
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SecurityException()"/>
    /// <exception cref="SecurityException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Security<T>(this IThrow @throw)
+   public static T Security<T>(this IThrowFor @throw)
    {
       Security(@throw);
       return default!;
@@ -59,7 +59,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SecurityException(string)"/>
    /// <exception cref="SecurityException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Security<T>(this IThrow @throw, string? message)
+   public static T Security<T>(this IThrowFor @throw, string? message)
    {
       Security(@throw, message);
       return default!;
@@ -68,7 +68,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SecurityException(string, Exception)"/>
    /// <exception cref="SecurityException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Security<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T Security<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       Security(@throw, message, inner);
       return default!;
@@ -77,7 +77,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SecurityException(string, Type)"/>
    /// <exception cref="SecurityException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Security<T>(this IThrow @throw, string? message, Type? type)
+   public static T Security<T>(this IThrowFor @throw, string? message, Type? type)
    {
       Security(@throw, message, type);
       return default!;
@@ -86,7 +86,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SecurityException(string, Type, string)"/>
    /// <exception cref="SecurityException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Security<T>(this IThrow @throw, string? message, Type? type, string? state)
+   public static T Security<T>(this IThrowFor @throw, string? message, Type? type, string? state)
    {
       Security(@throw, message, type, state);
       return default!;

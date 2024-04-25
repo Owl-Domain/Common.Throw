@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TypeInitializationException(string, Exception)"/>
    /// <exception cref="TypeInitializationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TypeInitialization(this IThrow @throw, string? fullTypeName, Exception? innerException)
+   public static void TypeInitialization(this IThrowFor @throw, string? fullTypeName, Exception? innerException)
    {
       throw new TypeInitializationException(fullTypeName, innerException);
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TypeInitializationException(string, Exception)"/>
    /// <exception cref="TypeInitializationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TypeInitialization<T>(this IThrow @throw, string? fullTypeName, Exception? innerException)
+   public static T TypeInitialization<T>(this IThrowFor @throw, string? fullTypeName, Exception? innerException)
    {
       TypeInitialization(@throw, fullTypeName, innerException);
       return default!;

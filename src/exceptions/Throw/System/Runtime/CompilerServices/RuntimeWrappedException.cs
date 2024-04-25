@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="RuntimeWrappedException(Object)"/>
    /// <exception cref="RuntimeWrappedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void RuntimeWrapped(this IThrow @throw, Object thrownObject)
+   public static void RuntimeWrapped(this IThrowFor @throw, Object thrownObject)
    {
       throw new RuntimeWrappedException(thrownObject);
    }
@@ -18,7 +18,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="RuntimeWrappedException(Object)"/>
    /// <exception cref="RuntimeWrappedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T RuntimeWrapped<T>(this IThrow @throw, Object thrownObject)
+   public static T RuntimeWrapped<T>(this IThrowFor @throw, Object thrownObject)
    {
       RuntimeWrapped(@throw, thrownObject);
       return default!;

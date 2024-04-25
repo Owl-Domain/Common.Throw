@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="IndexOutOfRangeException()"/>
    /// <exception cref="IndexOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void IndexOutOfRange(this IThrow @throw)
+   public static void IndexOutOfRange(this IThrowFor @throw)
    {
       throw new IndexOutOfRangeException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="IndexOutOfRangeException(string)"/>
    /// <exception cref="IndexOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void IndexOutOfRange(this IThrow @throw, string? message)
+   public static void IndexOutOfRange(this IThrowFor @throw, string? message)
    {
       throw new IndexOutOfRangeException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="IndexOutOfRangeException(string, Exception)"/>
    /// <exception cref="IndexOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void IndexOutOfRange(this IThrow @throw, string? message, Exception? innerException)
+   public static void IndexOutOfRange(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new IndexOutOfRangeException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="IndexOutOfRangeException()"/>
    /// <exception cref="IndexOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T IndexOutOfRange<T>(this IThrow @throw)
+   public static T IndexOutOfRange<T>(this IThrowFor @throw)
    {
       IndexOutOfRange(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="IndexOutOfRangeException(string)"/>
    /// <exception cref="IndexOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T IndexOutOfRange<T>(this IThrow @throw, string? message)
+   public static T IndexOutOfRange<T>(this IThrowFor @throw, string? message)
    {
       IndexOutOfRange(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="IndexOutOfRangeException(string, Exception)"/>
    /// <exception cref="IndexOutOfRangeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T IndexOutOfRange<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T IndexOutOfRange<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       IndexOutOfRange(@throw, message, innerException);
       return default!;

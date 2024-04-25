@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SemaphoreFullException()"/>
    /// <exception cref="SemaphoreFullException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SemaphoreFull(this IThrow @throw)
+   public static void SemaphoreFull(this IThrowFor @throw)
    {
       throw new SemaphoreFullException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SemaphoreFullException(string)"/>
    /// <exception cref="SemaphoreFullException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SemaphoreFull(this IThrow @throw, string? message)
+   public static void SemaphoreFull(this IThrowFor @throw, string? message)
    {
       throw new SemaphoreFullException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SemaphoreFullException(string, Exception)"/>
    /// <exception cref="SemaphoreFullException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SemaphoreFull(this IThrow @throw, string? message, Exception? innerException)
+   public static void SemaphoreFull(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new SemaphoreFullException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SemaphoreFullException()"/>
    /// <exception cref="SemaphoreFullException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SemaphoreFull<T>(this IThrow @throw)
+   public static T SemaphoreFull<T>(this IThrowFor @throw)
    {
       SemaphoreFull(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SemaphoreFullException(string)"/>
    /// <exception cref="SemaphoreFullException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SemaphoreFull<T>(this IThrow @throw, string? message)
+   public static T SemaphoreFull<T>(this IThrowFor @throw, string? message)
    {
       SemaphoreFull(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SemaphoreFullException(string, Exception)"/>
    /// <exception cref="SemaphoreFullException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SemaphoreFull<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T SemaphoreFull<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       SemaphoreFull(@throw, message, innerException);
       return default!;

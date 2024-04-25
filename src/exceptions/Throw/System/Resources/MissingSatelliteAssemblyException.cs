@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingSatelliteAssemblyException()"/>
    /// <exception cref="MissingSatelliteAssemblyException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingSatelliteAssembly(this IThrow @throw)
+   public static void MissingSatelliteAssembly(this IThrowFor @throw)
    {
       throw new MissingSatelliteAssemblyException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingSatelliteAssemblyException(string)"/>
    /// <exception cref="MissingSatelliteAssemblyException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingSatelliteAssembly(this IThrow @throw, string? message)
+   public static void MissingSatelliteAssembly(this IThrowFor @throw, string? message)
    {
       throw new MissingSatelliteAssemblyException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingSatelliteAssemblyException(string, string)"/>
    /// <exception cref="MissingSatelliteAssemblyException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingSatelliteAssembly(this IThrow @throw, string? message, string? cultureName)
+   public static void MissingSatelliteAssembly(this IThrowFor @throw, string? message, string? cultureName)
    {
       throw new MissingSatelliteAssemblyException(message, cultureName);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingSatelliteAssemblyException(string, Exception)"/>
    /// <exception cref="MissingSatelliteAssemblyException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void MissingSatelliteAssembly(this IThrow @throw, string? message, Exception? inner)
+   public static void MissingSatelliteAssembly(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new MissingSatelliteAssemblyException(message, inner);
    }
@@ -42,7 +42,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingSatelliteAssemblyException()"/>
    /// <exception cref="MissingSatelliteAssemblyException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingSatelliteAssembly<T>(this IThrow @throw)
+   public static T MissingSatelliteAssembly<T>(this IThrowFor @throw)
    {
       MissingSatelliteAssembly(@throw);
       return default!;
@@ -51,7 +51,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingSatelliteAssemblyException(string)"/>
    /// <exception cref="MissingSatelliteAssemblyException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingSatelliteAssembly<T>(this IThrow @throw, string? message)
+   public static T MissingSatelliteAssembly<T>(this IThrowFor @throw, string? message)
    {
       MissingSatelliteAssembly(@throw, message);
       return default!;
@@ -60,7 +60,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingSatelliteAssemblyException(string, string)"/>
    /// <exception cref="MissingSatelliteAssemblyException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingSatelliteAssembly<T>(this IThrow @throw, string? message, string? cultureName)
+   public static T MissingSatelliteAssembly<T>(this IThrowFor @throw, string? message, string? cultureName)
    {
       MissingSatelliteAssembly(@throw, message, cultureName);
       return default!;
@@ -69,7 +69,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="MissingSatelliteAssemblyException(string, Exception)"/>
    /// <exception cref="MissingSatelliteAssemblyException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T MissingSatelliteAssembly<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T MissingSatelliteAssembly<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       MissingSatelliteAssembly(@throw, message, inner);
       return default!;

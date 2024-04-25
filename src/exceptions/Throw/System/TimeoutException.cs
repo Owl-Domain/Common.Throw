@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TimeoutException()"/>
    /// <exception cref="TimeoutException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Timeout(this IThrow @throw)
+   public static void Timeout(this IThrowFor @throw)
    {
       throw new TimeoutException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TimeoutException(string)"/>
    /// <exception cref="TimeoutException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Timeout(this IThrow @throw, string? message)
+   public static void Timeout(this IThrowFor @throw, string? message)
    {
       throw new TimeoutException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TimeoutException(string, Exception)"/>
    /// <exception cref="TimeoutException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Timeout(this IThrow @throw, string? message, Exception? innerException)
+   public static void Timeout(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new TimeoutException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TimeoutException()"/>
    /// <exception cref="TimeoutException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Timeout<T>(this IThrow @throw)
+   public static T Timeout<T>(this IThrowFor @throw)
    {
       Timeout(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TimeoutException(string)"/>
    /// <exception cref="TimeoutException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Timeout<T>(this IThrow @throw, string? message)
+   public static T Timeout<T>(this IThrowFor @throw, string? message)
    {
       Timeout(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TimeoutException(string, Exception)"/>
    /// <exception cref="TimeoutException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Timeout<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T Timeout<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       Timeout(@throw, message, innerException);
       return default!;

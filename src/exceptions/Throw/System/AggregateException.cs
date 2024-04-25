@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AggregateException()"/>
    /// <exception cref="AggregateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Aggregate(this IThrow @throw)
+   public static void Aggregate(this IThrowFor @throw)
    {
       throw new AggregateException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AggregateException(string)"/>
    /// <exception cref="AggregateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Aggregate(this IThrow @throw, string? message)
+   public static void Aggregate(this IThrowFor @throw, string? message)
    {
       throw new AggregateException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AggregateException(string, Exception)"/>
    /// <exception cref="AggregateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Aggregate(this IThrow @throw, string? message, Exception innerException)
+   public static void Aggregate(this IThrowFor @throw, string? message, Exception innerException)
    {
       throw new AggregateException(message, innerException);
    }
@@ -30,7 +30,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AggregateException(IEnumerable{Exception})"/>
    /// <exception cref="AggregateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Aggregate(this IThrow @throw, IEnumerable<Exception> innerExceptions)
+   public static void Aggregate(this IThrowFor @throw, IEnumerable<Exception> innerExceptions)
    {
       throw new AggregateException(innerExceptions);
    }
@@ -38,7 +38,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AggregateException(Exception[])"/>
    /// <exception cref="AggregateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Aggregate(this IThrow @throw, params Exception[] innerExceptions)
+   public static void Aggregate(this IThrowFor @throw, params Exception[] innerExceptions)
    {
       throw new AggregateException(innerExceptions);
    }
@@ -46,7 +46,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AggregateException(string, IEnumerable{Exception})"/>
    /// <exception cref="AggregateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Aggregate(this IThrow @throw, string? message, IEnumerable<Exception> innerExceptions)
+   public static void Aggregate(this IThrowFor @throw, string? message, IEnumerable<Exception> innerExceptions)
    {
       throw new AggregateException(message, innerExceptions);
    }
@@ -54,7 +54,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AggregateException(string, Exception[])"/>
    /// <exception cref="AggregateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Aggregate(this IThrow @throw, string? message, params Exception[] innerExceptions)
+   public static void Aggregate(this IThrowFor @throw, string? message, params Exception[] innerExceptions)
    {
       throw new AggregateException(message, innerExceptions);
    }
@@ -64,7 +64,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AggregateException()"/>
    /// <exception cref="AggregateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Aggregate<T>(this IThrow @throw)
+   public static T Aggregate<T>(this IThrowFor @throw)
    {
       Aggregate(@throw);
       return default!;
@@ -73,7 +73,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AggregateException(string)"/>
    /// <exception cref="AggregateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Aggregate<T>(this IThrow @throw, string? message)
+   public static T Aggregate<T>(this IThrowFor @throw, string? message)
    {
       Aggregate(@throw, message);
       return default!;
@@ -82,7 +82,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AggregateException(string, Exception)"/>
    /// <exception cref="AggregateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Aggregate<T>(this IThrow @throw, string? message, Exception innerException)
+   public static T Aggregate<T>(this IThrowFor @throw, string? message, Exception innerException)
    {
       Aggregate(@throw, message, innerException);
       return default!;
@@ -91,7 +91,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AggregateException(IEnumerable{Exception})"/>
    /// <exception cref="AggregateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Aggregate<T>(this IThrow @throw, IEnumerable<Exception> innerExceptions)
+   public static T Aggregate<T>(this IThrowFor @throw, IEnumerable<Exception> innerExceptions)
    {
       Aggregate(@throw, innerExceptions);
       return default!;
@@ -100,7 +100,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AggregateException(Exception[])"/>
    /// <exception cref="AggregateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Aggregate<T>(this IThrow @throw, params Exception[] innerExceptions)
+   public static T Aggregate<T>(this IThrowFor @throw, params Exception[] innerExceptions)
    {
       Aggregate(@throw, innerExceptions);
       return default!;
@@ -109,7 +109,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AggregateException(string, IEnumerable{Exception})"/>
    /// <exception cref="AggregateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Aggregate<T>(this IThrow @throw, string? message, IEnumerable<Exception> innerExceptions)
+   public static T Aggregate<T>(this IThrowFor @throw, string? message, IEnumerable<Exception> innerExceptions)
    {
       Aggregate(@throw, message, innerExceptions);
       return default!;
@@ -118,7 +118,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AggregateException(string, Exception[])"/>
    /// <exception cref="AggregateException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Aggregate<T>(this IThrow @throw, string? message, params Exception[] innerExceptions)
+   public static T Aggregate<T>(this IThrowFor @throw, string? message, params Exception[] innerExceptions)
    {
       Aggregate(@throw, message, innerExceptions);
       return default!;

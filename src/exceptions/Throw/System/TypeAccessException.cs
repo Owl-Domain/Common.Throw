@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TypeAccessException()"/>
    /// <exception cref="TypeAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TypeAccess(this IThrow @throw)
+   public static void TypeAccess(this IThrowFor @throw)
    {
       throw new TypeAccessException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TypeAccessException(string)"/>
    /// <exception cref="TypeAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TypeAccess(this IThrow @throw, string? message)
+   public static void TypeAccess(this IThrowFor @throw, string? message)
    {
       throw new TypeAccessException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TypeAccessException(string, Exception)"/>
    /// <exception cref="TypeAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TypeAccess(this IThrow @throw, string? message, Exception? inner)
+   public static void TypeAccess(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new TypeAccessException(message, inner);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TypeAccessException()"/>
    /// <exception cref="TypeAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TypeAccess<T>(this IThrow @throw)
+   public static T TypeAccess<T>(this IThrowFor @throw)
    {
       TypeAccess(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TypeAccessException(string)"/>
    /// <exception cref="TypeAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TypeAccess<T>(this IThrow @throw, string? message)
+   public static T TypeAccess<T>(this IThrowFor @throw, string? message)
    {
       TypeAccess(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TypeAccessException(string, Exception)"/>
    /// <exception cref="TypeAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TypeAccess<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T TypeAccess<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       TypeAccess(@throw, message, inner);
       return default!;

@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="UnreachableException()"/>
    /// <exception cref="UnreachableException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Unreachable(this IThrow @throw)
+   public static void Unreachable(this IThrowFor @throw)
    {
       throw new UnreachableException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="UnreachableException(string)"/>
    /// <exception cref="UnreachableException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Unreachable(this IThrow @throw, string? message)
+   public static void Unreachable(this IThrowFor @throw, string? message)
    {
       throw new UnreachableException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="UnreachableException(string, Exception)"/>
    /// <exception cref="UnreachableException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Unreachable(this IThrow @throw, string? message, Exception? innerException)
+   public static void Unreachable(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new UnreachableException(message, innerException);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="UnreachableException()"/>
    /// <exception cref="UnreachableException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Unreachable<T>(this IThrow @throw)
+   public static T Unreachable<T>(this IThrowFor @throw)
    {
       Unreachable(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="UnreachableException(string)"/>
    /// <exception cref="UnreachableException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Unreachable<T>(this IThrow @throw, string? message)
+   public static T Unreachable<T>(this IThrowFor @throw, string? message)
    {
       Unreachable(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="UnreachableException(string, Exception)"/>
    /// <exception cref="UnreachableException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Unreachable<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T Unreachable<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       Unreachable(@throw, message, innerException);
       return default!;

@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileLoadException()"/>
    /// <exception cref="FileLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void FileLoad(this IThrow @throw)
+   public static void FileLoad(this IThrowFor @throw)
    {
       throw new FileLoadException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileLoadException(string)"/>
    /// <exception cref="FileLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void FileLoad(this IThrow @throw, string? message)
+   public static void FileLoad(this IThrowFor @throw, string? message)
    {
       throw new FileLoadException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileLoadException(string, Exception)"/>
    /// <exception cref="FileLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void FileLoad(this IThrow @throw, string? message, Exception? inner)
+   public static void FileLoad(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new FileLoadException(message, inner);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileLoadException(string, string)"/>
    /// <exception cref="FileLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void FileLoad(this IThrow @throw, string? message, string? fileName)
+   public static void FileLoad(this IThrowFor @throw, string? message, string? fileName)
    {
       throw new FileLoadException(message, fileName);
    }
@@ -40,7 +40,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileLoadException(string, string, Exception)"/>
    /// <exception cref="FileLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void FileLoad(this IThrow @throw, string? message, string? fileName, Exception? inner)
+   public static void FileLoad(this IThrowFor @throw, string? message, string? fileName, Exception? inner)
    {
       throw new FileLoadException(message, fileName, inner);
    }
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileLoadException()"/>
    /// <exception cref="FileLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T FileLoad<T>(this IThrow @throw)
+   public static T FileLoad<T>(this IThrowFor @throw)
    {
       FileLoad(@throw);
       return default!;
@@ -59,7 +59,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileLoadException(string)"/>
    /// <exception cref="FileLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T FileLoad<T>(this IThrow @throw, string? message)
+   public static T FileLoad<T>(this IThrowFor @throw, string? message)
    {
       FileLoad(@throw, message);
       return default!;
@@ -68,7 +68,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileLoadException(string, Exception)"/>
    /// <exception cref="FileLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T FileLoad<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T FileLoad<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       FileLoad(@throw, message, inner);
       return default!;
@@ -77,7 +77,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileLoadException(string, string)"/>
    /// <exception cref="FileLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T FileLoad<T>(this IThrow @throw, string? message, string? fileName)
+   public static T FileLoad<T>(this IThrowFor @throw, string? message, string? fileName)
    {
       FileLoad(@throw, message, fileName);
       return default!;
@@ -86,7 +86,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FileLoadException(string, string, Exception)"/>
    /// <exception cref="FileLoadException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T FileLoad<T>(this IThrow @throw, string? message, string? fileName, Exception? inner)
+   public static T FileLoad<T>(this IThrowFor @throw, string? message, string? fileName, Exception? inner)
    {
       FileLoad(@throw, message, fileName, inner);
       return default!;

@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TaskCanceledException()"/>
    /// <exception cref="TaskCanceledException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TaskCanceled(this IThrow @throw)
+   public static void TaskCanceled(this IThrowFor @throw)
    {
       throw new TaskCanceledException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TaskCanceledException(string)"/>
    /// <exception cref="TaskCanceledException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TaskCanceled(this IThrow @throw, string? message)
+   public static void TaskCanceled(this IThrowFor @throw, string? message)
    {
       throw new TaskCanceledException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TaskCanceledException(string, Exception)"/>
    /// <exception cref="TaskCanceledException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TaskCanceled(this IThrow @throw, string? message, Exception? innerException)
+   public static void TaskCanceled(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new TaskCanceledException(message, innerException);
    }
@@ -30,7 +30,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TaskCanceledException(string, Exception, CancellationToken)"/>
    /// <exception cref="TaskCanceledException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TaskCanceled(this IThrow @throw, string? message, Exception? innerException, CancellationToken token)
+   public static void TaskCanceled(this IThrowFor @throw, string? message, Exception? innerException, CancellationToken token)
    {
       throw new TaskCanceledException(message, innerException, token);
    }
@@ -38,7 +38,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TaskCanceledException(Task)"/>
    /// <exception cref="TaskCanceledException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TaskCanceled(this IThrow @throw, Task? task)
+   public static void TaskCanceled(this IThrowFor @throw, Task? task)
    {
       throw new TaskCanceledException(task);
    }
@@ -48,7 +48,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TaskCanceledException()"/>
    /// <exception cref="TaskCanceledException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TaskCanceled<T>(this IThrow @throw)
+   public static T TaskCanceled<T>(this IThrowFor @throw)
    {
       TaskCanceled(@throw);
       return default!;
@@ -57,7 +57,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TaskCanceledException(string)"/>
    /// <exception cref="TaskCanceledException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TaskCanceled<T>(this IThrow @throw, string? message)
+   public static T TaskCanceled<T>(this IThrowFor @throw, string? message)
    {
       TaskCanceled(@throw, message);
       return default!;
@@ -66,7 +66,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TaskCanceledException(string, Exception)"/>
    /// <exception cref="TaskCanceledException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TaskCanceled<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T TaskCanceled<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       TaskCanceled(@throw, message, innerException);
       return default!;
@@ -75,7 +75,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TaskCanceledException(string, Exception, CancellationToken)"/>
    /// <exception cref="TaskCanceledException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TaskCanceled<T>(this IThrow @throw, string? message, Exception? innerException, CancellationToken token)
+   public static T TaskCanceled<T>(this IThrowFor @throw, string? message, Exception? innerException, CancellationToken token)
    {
       TaskCanceled(@throw, message, innerException, token);
       return default!;
@@ -84,7 +84,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TaskCanceledException(Task)"/>
    /// <exception cref="TaskCanceledException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TaskCanceled<T>(this IThrow @throw, Task? task)
+   public static T TaskCanceled<T>(this IThrowFor @throw, Task? task)
    {
       TaskCanceled(@throw, task);
       return default!;

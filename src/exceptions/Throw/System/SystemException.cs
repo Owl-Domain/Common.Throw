@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SystemException()"/>
    /// <exception cref="SystemException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void System(this IThrow @throw)
+   public static void System(this IThrowFor @throw)
    {
       throw new SystemException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SystemException(string)"/>
    /// <exception cref="SystemException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void System(this IThrow @throw, string? message)
+   public static void System(this IThrowFor @throw, string? message)
    {
       throw new SystemException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SystemException(string, Exception)"/>
    /// <exception cref="SystemException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void System(this IThrow @throw, string? message, Exception? innerException)
+   public static void System(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new SystemException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SystemException()"/>
    /// <exception cref="SystemException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T System<T>(this IThrow @throw)
+   public static T System<T>(this IThrowFor @throw)
    {
       System(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SystemException(string)"/>
    /// <exception cref="SystemException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T System<T>(this IThrow @throw, string? message)
+   public static T System<T>(this IThrowFor @throw, string? message)
    {
       System(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SystemException(string, Exception)"/>
    /// <exception cref="SystemException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T System<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T System<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       System(@throw, message, innerException);
       return default!;

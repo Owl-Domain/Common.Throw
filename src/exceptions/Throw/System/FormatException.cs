@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FormatException()"/>
    /// <exception cref="FormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Format(this IThrow @throw)
+   public static void Format(this IThrowFor @throw)
    {
       throw new FormatException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FormatException(string)"/>
    /// <exception cref="FormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Format(this IThrow @throw, string? message)
+   public static void Format(this IThrowFor @throw, string? message)
    {
       throw new FormatException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FormatException(string, Exception)"/>
    /// <exception cref="FormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Format(this IThrow @throw, string? message, Exception? innerException)
+   public static void Format(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new FormatException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FormatException()"/>
    /// <exception cref="FormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Format<T>(this IThrow @throw)
+   public static T Format<T>(this IThrowFor @throw)
    {
       Format(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FormatException(string)"/>
    /// <exception cref="FormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Format<T>(this IThrow @throw, string? message)
+   public static T Format<T>(this IThrowFor @throw, string? message)
    {
       Format(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FormatException(string, Exception)"/>
    /// <exception cref="FormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Format<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T Format<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       Format(@throw, message, innerException);
       return default!;

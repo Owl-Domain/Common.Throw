@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidFilterCriteriaException()"/>
    /// <exception cref="InvalidFilterCriteriaException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidFilterCriteria(this IThrow @throw)
+   public static void InvalidFilterCriteria(this IThrowFor @throw)
    {
       throw new InvalidFilterCriteriaException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidFilterCriteriaException(string)"/>
    /// <exception cref="InvalidFilterCriteriaException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidFilterCriteria(this IThrow @throw, string? message)
+   public static void InvalidFilterCriteria(this IThrowFor @throw, string? message)
    {
       throw new InvalidFilterCriteriaException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidFilterCriteriaException(string, Exception)"/>
    /// <exception cref="InvalidFilterCriteriaException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidFilterCriteria(this IThrow @throw, string? message, Exception? inner)
+   public static void InvalidFilterCriteria(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new InvalidFilterCriteriaException(message, inner);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidFilterCriteriaException()"/>
    /// <exception cref="InvalidFilterCriteriaException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidFilterCriteria<T>(this IThrow @throw)
+   public static T InvalidFilterCriteria<T>(this IThrowFor @throw)
    {
       InvalidFilterCriteria(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidFilterCriteriaException(string)"/>
    /// <exception cref="InvalidFilterCriteriaException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidFilterCriteria<T>(this IThrow @throw, string? message)
+   public static T InvalidFilterCriteria<T>(this IThrowFor @throw, string? message)
    {
       InvalidFilterCriteria(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidFilterCriteriaException(string, Exception)"/>
    /// <exception cref="InvalidFilterCriteriaException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidFilterCriteria<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T InvalidFilterCriteria<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       InvalidFilterCriteria(@throw, message, inner);
       return default!;

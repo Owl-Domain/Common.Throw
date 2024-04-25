@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidOleVariantTypeException()"/>
    /// <exception cref="InvalidOleVariantTypeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidOleVariantType(this IThrow @throw)
+   public static void InvalidOleVariantType(this IThrowFor @throw)
    {
       throw new InvalidOleVariantTypeException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidOleVariantTypeException(string)"/>
    /// <exception cref="InvalidOleVariantTypeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidOleVariantType(this IThrow @throw, string? message)
+   public static void InvalidOleVariantType(this IThrowFor @throw, string? message)
    {
       throw new InvalidOleVariantTypeException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidOleVariantTypeException(string, Exception)"/>
    /// <exception cref="InvalidOleVariantTypeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidOleVariantType(this IThrow @throw, string? message, Exception? inner)
+   public static void InvalidOleVariantType(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new InvalidOleVariantTypeException(message, inner);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidOleVariantTypeException()"/>
    /// <exception cref="InvalidOleVariantTypeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidOleVariantType<T>(this IThrow @throw)
+   public static T InvalidOleVariantType<T>(this IThrowFor @throw)
    {
       InvalidOleVariantType(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidOleVariantTypeException(string)"/>
    /// <exception cref="InvalidOleVariantTypeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidOleVariantType<T>(this IThrow @throw, string? message)
+   public static T InvalidOleVariantType<T>(this IThrowFor @throw, string? message)
    {
       InvalidOleVariantType(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidOleVariantTypeException(string, Exception)"/>
    /// <exception cref="InvalidOleVariantTypeException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidOleVariantType<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T InvalidOleVariantType<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       InvalidOleVariantType(@throw, message, inner);
       return default!;

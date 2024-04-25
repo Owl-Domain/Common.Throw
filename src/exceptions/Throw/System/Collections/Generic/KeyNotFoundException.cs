@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="KeyNotFoundException()"/>
    /// <exception cref="KeyNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void KeyNotFound(this IThrow @throw)
+   public static void KeyNotFound(this IThrowFor @throw)
    {
       throw new KeyNotFoundException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="KeyNotFoundException(string)"/>
    /// <exception cref="KeyNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void KeyNotFound(this IThrow @throw, string? message)
+   public static void KeyNotFound(this IThrowFor @throw, string? message)
    {
       throw new KeyNotFoundException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="KeyNotFoundException(string, Exception)"/>
    /// <exception cref="KeyNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void KeyNotFound(this IThrow @throw, string? message, Exception? innerException)
+   public static void KeyNotFound(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new KeyNotFoundException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="KeyNotFoundException()"/>
    /// <exception cref="KeyNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T KeyNotFound<T>(this IThrow @throw)
+   public static T KeyNotFound<T>(this IThrowFor @throw)
    {
       KeyNotFound(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="KeyNotFoundException(string)"/>
    /// <exception cref="KeyNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T KeyNotFound<T>(this IThrow @throw, string? message)
+   public static T KeyNotFound<T>(this IThrowFor @throw, string? message)
    {
       KeyNotFound(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="KeyNotFoundException(string, Exception)"/>
    /// <exception cref="KeyNotFoundException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T KeyNotFound<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T KeyNotFound<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       KeyNotFound(@throw, message, innerException);
       return default!;

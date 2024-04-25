@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidComObjectException()"/>
    /// <exception cref="InvalidComObjectException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidComObject(this IThrow @throw)
+   public static void InvalidComObject(this IThrowFor @throw)
    {
       throw new InvalidComObjectException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidComObjectException(string)"/>
    /// <exception cref="InvalidComObjectException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidComObject(this IThrow @throw, string? message)
+   public static void InvalidComObject(this IThrowFor @throw, string? message)
    {
       throw new InvalidComObjectException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidComObjectException(string, Exception)"/>
    /// <exception cref="InvalidComObjectException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InvalidComObject(this IThrow @throw, string? message, Exception? inner)
+   public static void InvalidComObject(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new InvalidComObjectException(message, inner);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidComObjectException()"/>
    /// <exception cref="InvalidComObjectException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidComObject<T>(this IThrow @throw)
+   public static T InvalidComObject<T>(this IThrowFor @throw)
    {
       InvalidComObject(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidComObjectException(string)"/>
    /// <exception cref="InvalidComObjectException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidComObject<T>(this IThrow @throw, string? message)
+   public static T InvalidComObject<T>(this IThrowFor @throw, string? message)
    {
       InvalidComObject(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InvalidComObjectException(string, Exception)"/>
    /// <exception cref="InvalidComObjectException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InvalidComObject<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T InvalidComObject<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       InvalidComObject(@throw, message, inner);
       return default!;

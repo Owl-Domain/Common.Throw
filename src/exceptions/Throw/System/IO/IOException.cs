@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="IOException()"/>
    /// <exception cref="IOException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void IO(this IThrow @throw)
+   public static void IO(this IThrowFor @throw)
    {
       throw new IOException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="IOException(string)"/>
    /// <exception cref="IOException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void IO(this IThrow @throw, string? message)
+   public static void IO(this IThrowFor @throw, string? message)
    {
       throw new IOException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="IOException(string, int)"/>
    /// <exception cref="IOException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void IO(this IThrow @throw, string? message, int hresult)
+   public static void IO(this IThrowFor @throw, string? message, int hresult)
    {
       throw new IOException(message, hresult);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="IOException(string, Exception)"/>
    /// <exception cref="IOException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void IO(this IThrow @throw, string? message, Exception? innerException)
+   public static void IO(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new IOException(message, innerException);
    }
@@ -42,7 +42,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="IOException()"/>
    /// <exception cref="IOException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T IO<T>(this IThrow @throw)
+   public static T IO<T>(this IThrowFor @throw)
    {
       IO(@throw);
       return default!;
@@ -51,7 +51,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="IOException(string)"/>
    /// <exception cref="IOException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T IO<T>(this IThrow @throw, string? message)
+   public static T IO<T>(this IThrowFor @throw, string? message)
    {
       IO(@throw, message);
       return default!;
@@ -60,7 +60,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="IOException(string, int)"/>
    /// <exception cref="IOException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T IO<T>(this IThrow @throw, string? message, int hresult)
+   public static T IO<T>(this IThrowFor @throw, string? message, int hresult)
    {
       IO(@throw, message, hresult);
       return default!;
@@ -69,7 +69,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="IOException(string, Exception)"/>
    /// <exception cref="IOException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T IO<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T IO<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       IO(@throw, message, innerException);
       return default!;

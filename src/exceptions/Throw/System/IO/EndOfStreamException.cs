@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="EndOfStreamException()"/>
    /// <exception cref="EndOfStreamException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void EndOfStream(this IThrow @throw)
+   public static void EndOfStream(this IThrowFor @throw)
    {
       throw new EndOfStreamException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="EndOfStreamException(string)"/>
    /// <exception cref="EndOfStreamException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void EndOfStream(this IThrow @throw, string? message)
+   public static void EndOfStream(this IThrowFor @throw, string? message)
    {
       throw new EndOfStreamException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="EndOfStreamException(string, Exception)"/>
    /// <exception cref="EndOfStreamException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void EndOfStream(this IThrow @throw, string? message, Exception? innerException)
+   public static void EndOfStream(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new EndOfStreamException(message, innerException);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="EndOfStreamException()"/>
    /// <exception cref="EndOfStreamException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T EndOfStream<T>(this IThrow @throw)
+   public static T EndOfStream<T>(this IThrowFor @throw)
    {
       EndOfStream(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="EndOfStreamException(string)"/>
    /// <exception cref="EndOfStreamException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T EndOfStream<T>(this IThrow @throw, string? message)
+   public static T EndOfStream<T>(this IThrowFor @throw, string? message)
    {
       EndOfStream(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="EndOfStreamException(string, Exception)"/>
    /// <exception cref="EndOfStreamException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T EndOfStream<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T EndOfStream<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       EndOfStream(@throw, message, innerException);
       return default!;

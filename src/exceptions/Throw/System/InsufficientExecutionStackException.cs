@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InsufficientExecutionStackException()"/>
    /// <exception cref="InsufficientExecutionStackException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InsufficientExecutionStack(this IThrow @throw)
+   public static void InsufficientExecutionStack(this IThrowFor @throw)
    {
       throw new InsufficientExecutionStackException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InsufficientExecutionStackException(string)"/>
    /// <exception cref="InsufficientExecutionStackException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InsufficientExecutionStack(this IThrow @throw, string? message)
+   public static void InsufficientExecutionStack(this IThrowFor @throw, string? message)
    {
       throw new InsufficientExecutionStackException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InsufficientExecutionStackException(string, Exception)"/>
    /// <exception cref="InsufficientExecutionStackException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void InsufficientExecutionStack(this IThrow @throw, string? message, Exception? innerException)
+   public static void InsufficientExecutionStack(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new InsufficientExecutionStackException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InsufficientExecutionStackException()"/>
    /// <exception cref="InsufficientExecutionStackException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InsufficientExecutionStack<T>(this IThrow @throw)
+   public static T InsufficientExecutionStack<T>(this IThrowFor @throw)
    {
       InsufficientExecutionStack(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InsufficientExecutionStackException(string)"/>
    /// <exception cref="InsufficientExecutionStackException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InsufficientExecutionStack<T>(this IThrow @throw, string? message)
+   public static T InsufficientExecutionStack<T>(this IThrowFor @throw, string? message)
    {
       InsufficientExecutionStack(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="InsufficientExecutionStackException(string, Exception)"/>
    /// <exception cref="InsufficientExecutionStackException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T InsufficientExecutionStack<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T InsufficientExecutionStack<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       InsufficientExecutionStack(@throw, message, innerException);
       return default!;

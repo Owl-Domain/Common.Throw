@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="PlatformNotSupportedException()"/>
    /// <exception cref="PlatformNotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void PlatformNotSupported(this IThrow @throw)
+   public static void PlatformNotSupported(this IThrowFor @throw)
    {
       throw new PlatformNotSupportedException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="PlatformNotSupportedException(string)"/>
    /// <exception cref="PlatformNotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void PlatformNotSupported(this IThrow @throw, string? message)
+   public static void PlatformNotSupported(this IThrowFor @throw, string? message)
    {
       throw new PlatformNotSupportedException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="PlatformNotSupportedException(string, Exception)"/>
    /// <exception cref="PlatformNotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void PlatformNotSupported(this IThrow @throw, string? message, Exception? inner)
+   public static void PlatformNotSupported(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new PlatformNotSupportedException(message, inner);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="PlatformNotSupportedException()"/>
    /// <exception cref="PlatformNotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T PlatformNotSupported<T>(this IThrow @throw)
+   public static T PlatformNotSupported<T>(this IThrowFor @throw)
    {
       PlatformNotSupported(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="PlatformNotSupportedException(string)"/>
    /// <exception cref="PlatformNotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T PlatformNotSupported<T>(this IThrow @throw, string? message)
+   public static T PlatformNotSupported<T>(this IThrowFor @throw, string? message)
    {
       PlatformNotSupported(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="PlatformNotSupportedException(string, Exception)"/>
    /// <exception cref="PlatformNotSupportedException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T PlatformNotSupported<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T PlatformNotSupported<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       PlatformNotSupported(@throw, message, inner);
       return default!;

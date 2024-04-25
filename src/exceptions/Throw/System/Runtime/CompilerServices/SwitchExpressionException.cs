@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SwitchExpressionException()"/>
    /// <exception cref="SwitchExpressionException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SwitchExpression(this IThrow @throw)
+   public static void SwitchExpression(this IThrowFor @throw)
    {
       throw new SwitchExpressionException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SwitchExpressionException(Exception)"/>
    /// <exception cref="SwitchExpressionException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SwitchExpression(this IThrow @throw, Exception? innerException)
+   public static void SwitchExpression(this IThrowFor @throw, Exception? innerException)
    {
       throw new SwitchExpressionException(innerException);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SwitchExpressionException(Object)"/>
    /// <exception cref="SwitchExpressionException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SwitchExpression(this IThrow @throw, Object? unmatchedValue)
+   public static void SwitchExpression(this IThrowFor @throw, Object? unmatchedValue)
    {
       throw new SwitchExpressionException(unmatchedValue);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SwitchExpressionException(string)"/>
    /// <exception cref="SwitchExpressionException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SwitchExpression(this IThrow @throw, string? message)
+   public static void SwitchExpression(this IThrowFor @throw, string? message)
    {
       throw new SwitchExpressionException(message);
    }
@@ -40,7 +40,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SwitchExpressionException(string, Exception)"/>
    /// <exception cref="SwitchExpressionException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void SwitchExpression(this IThrow @throw, string? message, Exception? innerException)
+   public static void SwitchExpression(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new SwitchExpressionException(message, innerException);
    }
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SwitchExpressionException()"/>
    /// <exception cref="SwitchExpressionException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SwitchExpression<T>(this IThrow @throw)
+   public static T SwitchExpression<T>(this IThrowFor @throw)
    {
       SwitchExpression(@throw);
       return default!;
@@ -59,7 +59,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SwitchExpressionException(Exception)"/>
    /// <exception cref="SwitchExpressionException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SwitchExpression<T>(this IThrow @throw, Exception? innerException)
+   public static T SwitchExpression<T>(this IThrowFor @throw, Exception? innerException)
    {
       SwitchExpression(@throw, innerException);
       return default!;
@@ -68,7 +68,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SwitchExpressionException(Object)"/>
    /// <exception cref="SwitchExpressionException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SwitchExpression<T>(this IThrow @throw, Object? unmatchedValue)
+   public static T SwitchExpression<T>(this IThrowFor @throw, Object? unmatchedValue)
    {
       SwitchExpression(@throw, unmatchedValue);
       return default!;
@@ -77,7 +77,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SwitchExpressionException(string)"/>
    /// <exception cref="SwitchExpressionException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SwitchExpression<T>(this IThrow @throw, string? message)
+   public static T SwitchExpression<T>(this IThrowFor @throw, string? message)
    {
       SwitchExpression(@throw, message);
       return default!;
@@ -86,7 +86,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SwitchExpressionException(string, Exception)"/>
    /// <exception cref="SwitchExpressionException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T SwitchExpression<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T SwitchExpression<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       SwitchExpression(@throw, message, innerException);
       return default!;

@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="PathTooLongException()"/>
    /// <exception cref="PathTooLongException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void PathTooLong(this IThrow @throw)
+   public static void PathTooLong(this IThrowFor @throw)
    {
       throw new PathTooLongException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="PathTooLongException(string)"/>
    /// <exception cref="PathTooLongException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void PathTooLong(this IThrow @throw, string? message)
+   public static void PathTooLong(this IThrowFor @throw, string? message)
    {
       throw new PathTooLongException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="PathTooLongException(string, Exception)"/>
    /// <exception cref="PathTooLongException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void PathTooLong(this IThrow @throw, string? message, Exception? innerException)
+   public static void PathTooLong(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new PathTooLongException(message, innerException);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="PathTooLongException()"/>
    /// <exception cref="PathTooLongException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T PathTooLong<T>(this IThrow @throw)
+   public static T PathTooLong<T>(this IThrowFor @throw)
    {
       PathTooLong(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="PathTooLongException(string)"/>
    /// <exception cref="PathTooLongException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T PathTooLong<T>(this IThrow @throw, string? message)
+   public static T PathTooLong<T>(this IThrowFor @throw, string? message)
    {
       PathTooLong(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="PathTooLongException(string, Exception)"/>
    /// <exception cref="PathTooLongException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T PathTooLong<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T PathTooLong<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       PathTooLong(@throw, message, innerException);
       return default!;

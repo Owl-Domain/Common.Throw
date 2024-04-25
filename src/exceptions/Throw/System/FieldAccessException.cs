@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FieldAccessException()"/>
    /// <exception cref="FieldAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void FieldAccess(this IThrow @throw)
+   public static void FieldAccess(this IThrowFor @throw)
    {
       throw new FieldAccessException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FieldAccessException(string)"/>
    /// <exception cref="FieldAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void FieldAccess(this IThrow @throw, string? message)
+   public static void FieldAccess(this IThrowFor @throw, string? message)
    {
       throw new FieldAccessException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FieldAccessException(string, Exception)"/>
    /// <exception cref="FieldAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void FieldAccess(this IThrow @throw, string? message, Exception? inner)
+   public static void FieldAccess(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new FieldAccessException(message, inner);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FieldAccessException()"/>
    /// <exception cref="FieldAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T FieldAccess<T>(this IThrow @throw)
+   public static T FieldAccess<T>(this IThrowFor @throw)
    {
       FieldAccess(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FieldAccessException(string)"/>
    /// <exception cref="FieldAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T FieldAccess<T>(this IThrow @throw, string? message)
+   public static T FieldAccess<T>(this IThrowFor @throw, string? message)
    {
       FieldAccess(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="FieldAccessException(string, Exception)"/>
    /// <exception cref="FieldAccessException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T FieldAccess<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T FieldAccess<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       FieldAccess(@throw, message, inner);
       return default!;

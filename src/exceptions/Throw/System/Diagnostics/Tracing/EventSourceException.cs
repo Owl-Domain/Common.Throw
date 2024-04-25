@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="EventSourceException()"/>
    /// <exception cref="EventSourceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void EventSource(this IThrow @throw)
+   public static void EventSource(this IThrowFor @throw)
    {
       throw new EventSourceException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="EventSourceException(string)"/>
    /// <exception cref="EventSourceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void EventSource(this IThrow @throw, string? message)
+   public static void EventSource(this IThrowFor @throw, string? message)
    {
       throw new EventSourceException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="EventSourceException(string, Exception)"/>
    /// <exception cref="EventSourceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void EventSource(this IThrow @throw, string? message, Exception? innerException)
+   public static void EventSource(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new EventSourceException(message, innerException);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="EventSourceException()"/>
    /// <exception cref="EventSourceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T EventSource<T>(this IThrow @throw)
+   public static T EventSource<T>(this IThrowFor @throw)
    {
       EventSource(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="EventSourceException(string)"/>
    /// <exception cref="EventSourceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T EventSource<T>(this IThrow @throw, string? message)
+   public static T EventSource<T>(this IThrowFor @throw, string? message)
    {
       EventSource(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="EventSourceException(string, Exception)"/>
    /// <exception cref="EventSourceException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T EventSource<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T EventSource<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       EventSource(@throw, message, innerException);
       return default!;

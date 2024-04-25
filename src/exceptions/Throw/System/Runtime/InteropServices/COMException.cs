@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="COMException()"/>
    /// <exception cref="COMException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void COM(this IThrow @throw)
+   public static void COM(this IThrowFor @throw)
    {
       throw new COMException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="COMException(string)"/>
    /// <exception cref="COMException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void COM(this IThrow @throw, string? message)
+   public static void COM(this IThrowFor @throw, string? message)
    {
       throw new COMException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="COMException(string, Exception)"/>
    /// <exception cref="COMException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void COM(this IThrow @throw, string? message, Exception? inner)
+   public static void COM(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new COMException(message, inner);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="COMException(string, int)"/>
    /// <exception cref="COMException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void COM(this IThrow @throw, string? message, int errorCode)
+   public static void COM(this IThrowFor @throw, string? message, int errorCode)
    {
       throw new COMException(message, errorCode);
    }
@@ -42,7 +42,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="COMException()"/>
    /// <exception cref="COMException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T COM<T>(this IThrow @throw)
+   public static T COM<T>(this IThrowFor @throw)
    {
       COM(@throw);
       return default!;
@@ -51,7 +51,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="COMException(string)"/>
    /// <exception cref="COMException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T COM<T>(this IThrow @throw, string? message)
+   public static T COM<T>(this IThrowFor @throw, string? message)
    {
       COM(@throw, message);
       return default!;
@@ -60,7 +60,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="COMException(string, Exception)"/>
    /// <exception cref="COMException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T COM<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T COM<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       COM(@throw, message, inner);
       return default!;
@@ -69,7 +69,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="COMException(string, int)"/>
    /// <exception cref="COMException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T COM<T>(this IThrow @throw, string? message, int errorCode)
+   public static T COM<T>(this IThrowFor @throw, string? message, int errorCode)
    {
       COM(@throw, message, errorCode);
       return default!;

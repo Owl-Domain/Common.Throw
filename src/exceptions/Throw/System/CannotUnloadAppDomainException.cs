@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CannotUnloadAppDomainException()"/>
    /// <exception cref="CannotUnloadAppDomainException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void CannotUnloadAppDomain(this IThrow @throw)
+   public static void CannotUnloadAppDomain(this IThrowFor @throw)
    {
       throw new CannotUnloadAppDomainException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CannotUnloadAppDomainException(string)"/>
    /// <exception cref="CannotUnloadAppDomainException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void CannotUnloadAppDomain(this IThrow @throw, string? message)
+   public static void CannotUnloadAppDomain(this IThrowFor @throw, string? message)
    {
       throw new CannotUnloadAppDomainException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CannotUnloadAppDomainException(string, Exception)"/>
    /// <exception cref="CannotUnloadAppDomainException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void CannotUnloadAppDomain(this IThrow @throw, string? message, Exception? innerException)
+   public static void CannotUnloadAppDomain(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new CannotUnloadAppDomainException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CannotUnloadAppDomainException()"/>
    /// <exception cref="CannotUnloadAppDomainException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T CannotUnloadAppDomain<T>(this IThrow @throw)
+   public static T CannotUnloadAppDomain<T>(this IThrowFor @throw)
    {
       CannotUnloadAppDomain(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CannotUnloadAppDomainException(string)"/>
    /// <exception cref="CannotUnloadAppDomainException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T CannotUnloadAppDomain<T>(this IThrow @throw, string? message)
+   public static T CannotUnloadAppDomain<T>(this IThrowFor @throw, string? message)
    {
       CannotUnloadAppDomain(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CannotUnloadAppDomainException(string, Exception)"/>
    /// <exception cref="CannotUnloadAppDomainException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T CannotUnloadAppDomain<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T CannotUnloadAppDomain<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       CannotUnloadAppDomain(@throw, message, innerException);
       return default!;

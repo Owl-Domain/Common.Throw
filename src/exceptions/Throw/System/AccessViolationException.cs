@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AccessViolationException()"/>
    /// <exception cref="AccessViolationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void AccessViolation(this IThrow @throw)
+   public static void AccessViolation(this IThrowFor @throw)
    {
       throw new AccessViolationException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AccessViolationException(string)"/>
    /// <exception cref="AccessViolationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void AccessViolation(this IThrow @throw, string? message)
+   public static void AccessViolation(this IThrowFor @throw, string? message)
    {
       throw new AccessViolationException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AccessViolationException(string, Exception)"/>
    /// <exception cref="AccessViolationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void AccessViolation(this IThrow @throw, string? message, Exception? innerException)
+   public static void AccessViolation(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new AccessViolationException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AccessViolationException()"/>
    /// <exception cref="AccessViolationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T AccessViolation<T>(this IThrow @throw)
+   public static T AccessViolation<T>(this IThrowFor @throw)
    {
       AccessViolation(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AccessViolationException(string)"/>
    /// <exception cref="AccessViolationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T AccessViolation<T>(this IThrow @throw, string? message)
+   public static T AccessViolation<T>(this IThrowFor @throw, string? message)
    {
       AccessViolation(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="AccessViolationException(string, Exception)"/>
    /// <exception cref="AccessViolationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T AccessViolation<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T AccessViolation<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       AccessViolation(@throw, message, innerException);
       return default!;

@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CustomAttributeFormatException()"/>
    /// <exception cref="CustomAttributeFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void CustomAttributeFormat(this IThrow @throw)
+   public static void CustomAttributeFormat(this IThrowFor @throw)
    {
       throw new CustomAttributeFormatException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CustomAttributeFormatException(string)"/>
    /// <exception cref="CustomAttributeFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void CustomAttributeFormat(this IThrow @throw, string? message)
+   public static void CustomAttributeFormat(this IThrowFor @throw, string? message)
    {
       throw new CustomAttributeFormatException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CustomAttributeFormatException(string, Exception)"/>
    /// <exception cref="CustomAttributeFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void CustomAttributeFormat(this IThrow @throw, string? message, Exception? inner)
+   public static void CustomAttributeFormat(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new CustomAttributeFormatException(message, inner);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CustomAttributeFormatException()"/>
    /// <exception cref="CustomAttributeFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T CustomAttributeFormat<T>(this IThrow @throw)
+   public static T CustomAttributeFormat<T>(this IThrowFor @throw)
    {
       CustomAttributeFormat(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CustomAttributeFormatException(string)"/>
    /// <exception cref="CustomAttributeFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T CustomAttributeFormat<T>(this IThrow @throw, string? message)
+   public static T CustomAttributeFormat<T>(this IThrowFor @throw, string? message)
    {
       CustomAttributeFormat(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CustomAttributeFormatException(string, Exception)"/>
    /// <exception cref="CustomAttributeFormatException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T CustomAttributeFormat<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T CustomAttributeFormat<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       CustomAttributeFormat(@throw, message, inner);
       return default!;

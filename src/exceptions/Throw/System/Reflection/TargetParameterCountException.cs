@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TargetParameterCountException()"/>
    /// <exception cref="TargetParameterCountException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TargetParameterCount(this IThrow @throw)
+   public static void TargetParameterCount(this IThrowFor @throw)
    {
       throw new TargetParameterCountException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TargetParameterCountException(string)"/>
    /// <exception cref="TargetParameterCountException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TargetParameterCount(this IThrow @throw, string? message)
+   public static void TargetParameterCount(this IThrowFor @throw, string? message)
    {
       throw new TargetParameterCountException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TargetParameterCountException(string, Exception)"/>
    /// <exception cref="TargetParameterCountException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void TargetParameterCount(this IThrow @throw, string? message, Exception? inner)
+   public static void TargetParameterCount(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new TargetParameterCountException(message, inner);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TargetParameterCountException()"/>
    /// <exception cref="TargetParameterCountException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TargetParameterCount<T>(this IThrow @throw)
+   public static T TargetParameterCount<T>(this IThrowFor @throw)
    {
       TargetParameterCount(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TargetParameterCountException(string)"/>
    /// <exception cref="TargetParameterCountException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TargetParameterCount<T>(this IThrow @throw, string? message)
+   public static T TargetParameterCount<T>(this IThrowFor @throw, string? message)
    {
       TargetParameterCount(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="TargetParameterCountException(string, Exception)"/>
    /// <exception cref="TargetParameterCountException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T TargetParameterCount<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T TargetParameterCount<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       TargetParameterCount(@throw, message, inner);
       return default!;

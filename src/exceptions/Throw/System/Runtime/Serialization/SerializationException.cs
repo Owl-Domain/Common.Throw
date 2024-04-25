@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SerializationException()"/>
    /// <exception cref="SerializationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Serialization(this IThrow @throw)
+   public static void Serialization(this IThrowFor @throw)
    {
       throw new SerializationException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SerializationException(string)"/>
    /// <exception cref="SerializationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Serialization(this IThrow @throw, string? message)
+   public static void Serialization(this IThrowFor @throw, string? message)
    {
       throw new SerializationException(message);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SerializationException(string, Exception)"/>
    /// <exception cref="SerializationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Serialization(this IThrow @throw, string? message, Exception? innerException)
+   public static void Serialization(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new SerializationException(message, innerException);
    }
@@ -34,7 +34,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SerializationException()"/>
    /// <exception cref="SerializationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Serialization<T>(this IThrow @throw)
+   public static T Serialization<T>(this IThrowFor @throw)
    {
       Serialization(@throw);
       return default!;
@@ -43,7 +43,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SerializationException(string)"/>
    /// <exception cref="SerializationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Serialization<T>(this IThrow @throw, string? message)
+   public static T Serialization<T>(this IThrowFor @throw, string? message)
    {
       Serialization(@throw, message);
       return default!;
@@ -52,7 +52,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="SerializationException(string, Exception)"/>
    /// <exception cref="SerializationException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Serialization<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T Serialization<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       Serialization(@throw, message, innerException);
       return default!;

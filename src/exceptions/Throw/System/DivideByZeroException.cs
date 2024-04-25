@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DivideByZeroException()"/>
    /// <exception cref="DivideByZeroException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void DivideByZero(this IThrow @throw)
+   public static void DivideByZero(this IThrowFor @throw)
    {
       throw new DivideByZeroException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DivideByZeroException(string)"/>
    /// <exception cref="DivideByZeroException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void DivideByZero(this IThrow @throw, string? message)
+   public static void DivideByZero(this IThrowFor @throw, string? message)
    {
       throw new DivideByZeroException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DivideByZeroException(string, Exception)"/>
    /// <exception cref="DivideByZeroException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void DivideByZero(this IThrow @throw, string? message, Exception? innerException)
+   public static void DivideByZero(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new DivideByZeroException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DivideByZeroException()"/>
    /// <exception cref="DivideByZeroException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T DivideByZero<T>(this IThrow @throw)
+   public static T DivideByZero<T>(this IThrowFor @throw)
    {
       DivideByZero(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DivideByZeroException(string)"/>
    /// <exception cref="DivideByZeroException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T DivideByZero<T>(this IThrow @throw, string? message)
+   public static T DivideByZero<T>(this IThrowFor @throw, string? message)
    {
       DivideByZero(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="DivideByZeroException(string, Exception)"/>
    /// <exception cref="DivideByZeroException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T DivideByZero<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T DivideByZero<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       DivideByZero(@throw, message, innerException);
       return default!;

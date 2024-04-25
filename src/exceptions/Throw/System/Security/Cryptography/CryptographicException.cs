@@ -8,7 +8,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CryptographicException()"/>
    /// <exception cref="CryptographicException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Cryptographic(this IThrow @throw)
+   public static void Cryptographic(this IThrowFor @throw)
    {
       throw new CryptographicException();
    }
@@ -16,7 +16,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CryptographicException(int)"/>
    /// <exception cref="CryptographicException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Cryptographic(this IThrow @throw, int hr)
+   public static void Cryptographic(this IThrowFor @throw, int hr)
    {
       throw new CryptographicException(hr);
    }
@@ -24,7 +24,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CryptographicException(string)"/>
    /// <exception cref="CryptographicException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Cryptographic(this IThrow @throw, string? message)
+   public static void Cryptographic(this IThrowFor @throw, string? message)
    {
       throw new CryptographicException(message);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CryptographicException(string, Exception)"/>
    /// <exception cref="CryptographicException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Cryptographic(this IThrow @throw, string? message, Exception? inner)
+   public static void Cryptographic(this IThrowFor @throw, string? message, Exception? inner)
    {
       throw new CryptographicException(message, inner);
    }
@@ -40,7 +40,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CryptographicException(string, string)"/>
    /// <exception cref="CryptographicException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void Cryptographic(this IThrow @throw, [StringSyntax(StringSyntaxAttribute.CompositeFormat)] string format, string? insert)
+   public static void Cryptographic(this IThrowFor @throw, [StringSyntax(StringSyntaxAttribute.CompositeFormat)] string format, string? insert)
    {
       throw new CryptographicException(format, insert);
    }
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CryptographicException()"/>
    /// <exception cref="CryptographicException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Cryptographic<T>(this IThrow @throw)
+   public static T Cryptographic<T>(this IThrowFor @throw)
    {
       Cryptographic(@throw);
       return default!;
@@ -59,7 +59,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CryptographicException(int)"/>
    /// <exception cref="CryptographicException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Cryptographic<T>(this IThrow @throw, int hr)
+   public static T Cryptographic<T>(this IThrowFor @throw, int hr)
    {
       Cryptographic(@throw, hr);
       return default!;
@@ -68,7 +68,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CryptographicException(string)"/>
    /// <exception cref="CryptographicException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Cryptographic<T>(this IThrow @throw, string? message)
+   public static T Cryptographic<T>(this IThrowFor @throw, string? message)
    {
       Cryptographic(@throw, message);
       return default!;
@@ -77,7 +77,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CryptographicException(string, Exception)"/>
    /// <exception cref="CryptographicException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Cryptographic<T>(this IThrow @throw, string? message, Exception? inner)
+   public static T Cryptographic<T>(this IThrowFor @throw, string? message, Exception? inner)
    {
       Cryptographic(@throw, message, inner);
       return default!;
@@ -86,7 +86,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="CryptographicException(string, string)"/>
    /// <exception cref="CryptographicException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T Cryptographic<T>(this IThrow @throw, [StringSyntax(StringSyntaxAttribute.CompositeFormat)] string format, string? insert)
+   public static T Cryptographic<T>(this IThrowFor @throw, [StringSyntax(StringSyntaxAttribute.CompositeFormat)] string format, string? insert)
    {
       Cryptographic(@throw, format, insert);
       return default!;

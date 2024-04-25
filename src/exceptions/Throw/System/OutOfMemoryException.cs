@@ -6,7 +6,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="OutOfMemoryException()"/>
    /// <exception cref="OutOfMemoryException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void OutOfMemory(this IThrow @throw)
+   public static void OutOfMemory(this IThrowFor @throw)
    {
       throw new OutOfMemoryException();
    }
@@ -14,7 +14,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="OutOfMemoryException(string)"/>
    /// <exception cref="OutOfMemoryException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void OutOfMemory(this IThrow @throw, string? message)
+   public static void OutOfMemory(this IThrowFor @throw, string? message)
    {
       throw new OutOfMemoryException(message);
    }
@@ -22,7 +22,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="OutOfMemoryException(string, Exception)"/>
    /// <exception cref="OutOfMemoryException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.NoInlining)]
-   public static void OutOfMemory(this IThrow @throw, string? message, Exception? innerException)
+   public static void OutOfMemory(this IThrowFor @throw, string? message, Exception? innerException)
    {
       throw new OutOfMemoryException(message, innerException);
    }
@@ -32,7 +32,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="OutOfMemoryException()"/>
    /// <exception cref="OutOfMemoryException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T OutOfMemory<T>(this IThrow @throw)
+   public static T OutOfMemory<T>(this IThrowFor @throw)
    {
       OutOfMemory(@throw);
       return default!;
@@ -41,7 +41,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="OutOfMemoryException(string)"/>
    /// <exception cref="OutOfMemoryException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T OutOfMemory<T>(this IThrow @throw, string? message)
+   public static T OutOfMemory<T>(this IThrowFor @throw, string? message)
    {
       OutOfMemory(@throw, message);
       return default!;
@@ -50,7 +50,7 @@ public static partial class ThrowExtensions
    /// <inheritdoc cref="OutOfMemoryException(string, Exception)"/>
    /// <exception cref="OutOfMemoryException"/>
    [DoesNotReturn, MethodImpl(MethodImplOptions.AggressiveInlining)]
-   public static T OutOfMemory<T>(this IThrow @throw, string? message, Exception? innerException)
+   public static T OutOfMemory<T>(this IThrowFor @throw, string? message, Exception? innerException)
    {
       OutOfMemory(@throw, message, innerException);
       return default!;
