@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Project -->
+  <PropertyGroup Label="project">
+    <TargetFrameworks>netstandard2.1; net7.0</TargetFrameworks>
+    <LangVersion>12</LangVersion>
+    <Nullable>enable</Nullable>
+
+    <AssemblyName>OwlDomain.Common.Throw.Guards</AssemblyName>
+    <RootNamespace>OwlDomain.Common</RootNamespace>
+
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  
+  <!-- Project references -->
+  <ItemGroup Label="projects">
+    <ProjectReference Include="..\..\exceptions\Throw\Throw.csproj" />
+  </ItemGroup>
+
+  <!-- Nuget package -->
+  <PropertyGroup Label="nuget">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <Title>OwlDomain.Common.Throw.Guards</Title>
+    <Description>
+      A package that provides guard methods used for throwing
+      exceptions if the required conditions are not met.
+    </Description>
+    <PackageTags>owldomain, throwing, throw-helper, guards, guard-checks</PackageTags>
+
+    <Version>1.0.0</Version>
+
+    <Authors>Owl Domain, Nightowl</Authors>
+    <Company>OwlDomain</Company>
+
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/Owl-Domain/Common.Throw</PackageProjectUrl>
+  </PropertyGroup>
+  
+  <!-- Readme -->
+  <ItemGroup Label="readme">
+    <None Include="readme.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <!-- Repository -->
+  <PropertyGroup Label="repository">
+    <RepositoryType>git</RepositoryType>
+    <RepositoryBranch>master</RepositoryBranch>
+    <RepositoryUrl>https://github.com/Owl-Domain/Common.Throw</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>
