@@ -2,26 +2,31 @@ Common.Throw
 ===
 
 A package that provides non-inlinable helper methods for throwing 
-different exceptions, meant to reduce the compiled code size.
+different exceptions, meant to reduce the compiled code size, 
+and for helper guard methods for conditionally throwing exceptions.
 
 
 
 ## Structure
 
-This project is split into 2 areas, the base library, and the throw library.
+This project is split into 3 areas, the base library, the throw library, and the guards library.
 
-- Base library - This library contains the `IThrow` interface that all the
-  throw extension methods are expected to be based on, along with the
-  static `Throw` class which is used to access a singleton implementation of 
-  the `IThrow` interface, using which the throw extension methods can be accessed.
+- Base library - This library contains the `IThrowFor` and the `IThrowIf` interfaces 
+  that all the throw extension methods, and guard extension methods are expected to be 
+  based on, along with the static `Throw` class which is used to access a singleton 
+  implementation of the `IThrowFor` and the `IThrowIf` interfaces, using which the 
+  throw extension methods and the guard extension methods can be accessed.
 
-- The throw library - This is the main library which contains all of the throw
+- The throw library - This is one of the main libraries which contains all of the throw
   extension methods, for throwing all of the exceptions that are present in the
   .NET runtime, the throw methods provide overloads for all of the constructors
   that are present in those exceptions, aside from the obsolete ones.
 
+- The guards library - this is one of the main libraries which contains all of the
+  guard extension methods, for conditionally throwing exceptions.
+
 The project has been split up in this manner to make it 
-easy to add/replace the throw methods.
+easy to add/replace the throw and guard methods.
 
 
 
@@ -39,10 +44,17 @@ In C#, that would look like this:
   <PackageReference Include="OwlDomain.Common.Throw" Version="1.0.0" />
 </ItemGroup>
 ```
+or 
+```csproj
+<ItemGroup>
+  <PackageReference Include="OwlDomain.Common.Throw.Guards" Version="1.0.0" />
+</ItemGroup>
+```
+depending on your needs.
 
 
 
-## Usage
+## Usage - Throw methods
 
 Using the provided packages is extremely simple, after referencing them from your project
 simply use the `OwlDomain.Common` namespace, which will provide you access to the static
@@ -70,6 +82,28 @@ using OwlDomain.Common;
 
 return Throw.ForArgument<int>("message", "parameterName");
 ```
+
+
+
+## Usage - Guard methods
+
+Using the provided packages is extremely simple, after referencing them from your project
+simply use the `OwlDomain.Common` namespace, which will provide you access to the static
+`Throw` class, which provides the static property `If`, on which you will have
+access to all of the guard extension methods for conditionally throwing exceptions.
+
+An example of this would be:
+```csharp
+using OwlDomain.Common;
+
+void Foo(int index)
+{
+   Throw.If.IsFalse(index >= 0);
+}
+```
+
+This package also makes use of the throw extension methods provided by the
+`OwlDomain.Common.Throw` package.
 
 
 
