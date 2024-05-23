@@ -9,12 +9,15 @@ public sealed class BooleanGuardTests
    {
       // Arrange
       bool? value = true;
+      const string expectedParameterName = nameof(value);
 
       // Act
       void Act() => Throw.If.IsTrue(value);
 
       // Assert
-      Assert.That.ThrowsExactException<ArgumentException>(Act);
+      Assert.That
+         .ThrowsExactException(Act, out ArgumentException exception)
+         .AreEqual(exception.ParamName, expectedParameterName);
    }
 
    [DataRow(false, DisplayName = "false")]
@@ -47,11 +50,16 @@ public sealed class BooleanGuardTests
    [TestMethod]
    public void IsNotTrue_WithNonTrueValue_ThrowsArgumentException(bool? value)
    {
+      // Arrange
+      const string expectedParameterName = nameof(value);
+
       // Act
       void Act() => Throw.If.IsNotTrue(value);
 
       // Assert
-      Assert.That.ThrowsExactException<ArgumentException>(Act);
+      Assert.That
+         .ThrowsExactException(Act, out ArgumentException exception)
+         .AreEqual(exception.ParamName, expectedParameterName);
    }
    #endregion
 
@@ -61,12 +69,15 @@ public sealed class BooleanGuardTests
    {
       // Arrange
       bool? value = false;
+      const string expectedParameterName = nameof(value);
 
       // Act
       void Act() => Throw.If.IsFalse(value);
 
       // Assert
-      Assert.That.ThrowsExactException<ArgumentException>(Act);
+      Assert.That
+         .ThrowsExactException(Act, out ArgumentException exception)
+         .AreEqual(exception.ParamName, expectedParameterName);
    }
 
    [DataRow(true, DisplayName = "true")]
@@ -99,11 +110,16 @@ public sealed class BooleanGuardTests
    [TestMethod]
    public void IsNotFalse_WithNonFalseValue_ThrowsArgumentException(bool? value)
    {
+      // Arrange
+      const string expectedParameterName = nameof(value);
+
       // Act
       void Act() => Throw.If.IsNotFalse(value);
 
       // Assert
-      Assert.That.ThrowsExactException<ArgumentException>(Act);
+      Assert.That
+         .ThrowsExactException(Act, out ArgumentException exception)
+         .AreEqual(exception.ParamName, expectedParameterName);
    }
    #endregion
 }
