@@ -22,7 +22,7 @@ public static partial class GuardExtensions
       [CallerArgumentExpression(nameof(expression))] string expressionArgument = "<expression>")
    {
       if (expression is true)
-         Throw.For.Argument($"The expression '{expressionArgument}' was true when it wasn't expected to be.", paramterName);
+         Throw.For.Argument($"The expression '{expressionArgument}' was true.", paramterName);
 
       return @throw;
    }
@@ -70,7 +70,7 @@ public static partial class GuardExtensions
       [CallerArgumentExpression(nameof(expression))] string expressionArgument = "<expression>")
    {
       if (expression is false)
-         Throw.For.Argument($"The expression '{expressionArgument}' was false when it wasn't expected to be.", paramterName);
+         Throw.For.Argument($"The expression '{expressionArgument}' was false.", paramterName);
 
       return @throw;
    }

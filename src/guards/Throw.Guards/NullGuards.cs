@@ -15,7 +15,7 @@ public static partial class GuardExtensions
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>")
    {
       if (value is null)
-         Throw.For.ArgumentNull(valueArgument);
+         Throw.For.ArgumentNull(valueArgument, $"'{valueArgument}' was null.");
 
       return @throw;
    }
@@ -34,7 +34,7 @@ public static partial class GuardExtensions
       where T : struct
    {
       if (value is null)
-         Throw.For.ArgumentNull(valueArgument);
+         Throw.For.ArgumentNull(valueArgument, $"'{valueArgument}' was null.");
 
       return @throw;
    }
@@ -51,7 +51,7 @@ public static partial class GuardExtensions
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>")
    {
       if (value is not null)
-         Throw.For.Argument($"'{valueArgument}' was expected to be null but it wasn't.\nValue: {value}", valueArgument);
+         Throw.For.Argument($"'{valueArgument}' was expected to be null but instead it was '{value}'.", valueArgument);
 
       return @throw;
    }
@@ -70,7 +70,7 @@ public static partial class GuardExtensions
       where T : struct
    {
       if (value is not null)
-         Throw.For.Argument($"'{valueArgument}' was expected to be null but it wasn't.\nValue: {value}", valueArgument);
+         Throw.For.Argument($"'{valueArgument}' was expected to be null but instead it was '{value}'.", valueArgument);
 
       return @throw;
    }

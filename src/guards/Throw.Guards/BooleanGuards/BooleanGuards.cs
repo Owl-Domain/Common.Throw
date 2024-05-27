@@ -15,7 +15,7 @@ public static partial class GuardExtensions
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>")
    {
       if (value is true)
-         Throw.For.Argument($"'{valueArgument}' was true when it wasn't expected to be.", valueArgument);
+         Throw.For.Argument($"'{valueArgument}' was true.", valueArgument);
 
       return @throw;
    }
@@ -49,7 +49,7 @@ public static partial class GuardExtensions
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>")
    {
       if (value is false)
-         Throw.For.Argument($"'{valueArgument}' was false when it wasn't expected to be.", valueArgument);
+         Throw.For.Argument($"'{valueArgument}' was false.", valueArgument);
 
       return @throw;
    }

@@ -21,7 +21,7 @@ public static partial class GuardExtensions
       where T : struct, Enum
    {
       if (value.Value.HasFlag(flag.Value))
-         Throw.For.Argument($"'{valueArgument}' had the flag '{flagArgument}' set when it wasn't expected to.\nValue: {value}\nFlag: {flag}", valueArgument);
+         Throw.For.Argument($"'{valueArgument}' had the flag '{flagArgument}' set.\nValue: {value}\nFlag: {flag}", valueArgument);
 
       return @throw;
    }
@@ -36,7 +36,7 @@ public static partial class GuardExtensions
       where T : struct, Enum
    {
       if (value.HasFlag(flag))
-         Throw.For.Argument($"'{valueArgument}' had the flag '{flagArgument}' set when it wasn't expected to.\nValue: {value}\nFlag: {flag}", valueArgument);
+         Throw.For.Argument($"'{valueArgument}' had the flag '{flagArgument}' set.\nValue: {value}\nFlag: {flag}", valueArgument);
 
       return @throw;
    }
@@ -61,7 +61,7 @@ public static partial class GuardExtensions
       where T : struct, Enum
    {
       if (value.Value.HasFlag(flag.Value) is false)
-         Throw.For.Argument($"'{valueArgument}' didn't have the flag '{flagArgument}' set when it was expected to have it.\nValue: {value}\nFlag: {flag}", valueArgument);
+         Throw.For.Argument($"'{valueArgument}' didn't have the flag '{flagArgument}' set.\nValue: {value}\nFlag: {flag}", valueArgument);
 
       return @throw;
    }
@@ -76,7 +76,7 @@ public static partial class GuardExtensions
       where T : struct, Enum
    {
       if (value.HasFlag(flag) is false)
-         Throw.For.Argument($"'{valueArgument}' didn't have the flag '{flagArgument}' set when it was expected to have it.\nValue: {value}\nFlag: {flag}", valueArgument);
+         Throw.For.Argument($"'{valueArgument}' didn't have the flag '{flagArgument}' set.\nValue: {value}\nFlag: {flag}", valueArgument);
 
       return @throw;
    }
@@ -101,7 +101,7 @@ public static partial class GuardExtensions
 #else
       if (Enum.IsDefined(typeof(T), value.Value))
 #endif
-         Throw.For.Argument($"'{valueArgument}' was a defined value in the {typeof(T)} enum when it wasn't expected to be.\nValue: {value}", valueArgument);
+         Throw.For.Argument($"'{valueArgument}' was a defined value in the {typeof(T)} enum.\nValue: {value}", valueArgument);
 
       return @throw;
    }
@@ -118,7 +118,7 @@ public static partial class GuardExtensions
 #else
       if (Enum.IsDefined(typeof(T), value))
 #endif
-         Throw.For.Argument($"'{valueArgument}' was a defined value in the {typeof(T)} enum when it wasn't expected to be.\nValue: {value}", valueArgument);
+         Throw.For.Argument($"'{valueArgument}' was a defined value in the {typeof(T)} enum.\nValue: {value}", valueArgument);
 
       return @throw;
    }
@@ -143,7 +143,7 @@ public static partial class GuardExtensions
 #else
       if (Enum.IsDefined(typeof(T), value.Value) is false)
 #endif
-         Throw.For.Argument($"'{valueArgument}' was not defined value in the {typeof(T)} enum when it was expected to be.\nValue: {value}", valueArgument);
+         Throw.For.Argument($"'{valueArgument}' was not a defined value in the {typeof(T)} enum.\nValue: {value}", valueArgument);
 
       return @throw;
    }
@@ -160,7 +160,7 @@ public static partial class GuardExtensions
 #else
       if (Enum.IsDefined(typeof(T), value) is false)
 #endif
-         Throw.For.Argument($"'{valueArgument}' was not defined value in the {typeof(T)} enum when it was expected to be.\nValue: {value}", valueArgument);
+         Throw.For.Argument($"'{valueArgument}' was not a defined value in the {typeof(T)} enum.\nValue: {value}", valueArgument);
 
       return @throw;
    }
