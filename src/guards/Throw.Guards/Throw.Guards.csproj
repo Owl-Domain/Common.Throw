@@ -40,12 +40,16 @@
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageLicenseFile>license.md</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/Owl-Domain/Common.Throw</PackageProjectUrl>
+    
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl>https://github.com/Owl-Domain/Common.Throw/blob/master/icon.png?raw=true</PackageIconUrl>
   </PropertyGroup>
 
   <!-- Resources -->
   <ItemGroup Label="resources">
     <None Include="readme.md" Pack="true" PackagePath="\" />
     <None Include="../../../license.md" Pack="true" PackagePath="\" />
+    <None Include="../../../icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <!-- Repository -->
