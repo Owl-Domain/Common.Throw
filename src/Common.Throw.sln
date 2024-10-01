@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{D5601A2A-5
 	ProjectSection(SolutionItems) = preProject
 		..\.gitattributes = ..\.gitattributes
 		..\.gitignore = ..\.gitignore
+		..\contributing.md = ..\contributing.md
+		..\license.md = ..\license.md
 		..\readme.md = ..\readme.md
 	EndProjectSection
 EndProject
@@ -26,9 +28,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Throw.CodeTests", "exceptio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "guards", "guards", "{DC824F60-8DFE-4474-9017-0BA19F3D66E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Throw.Guards.Tests", "guards\Throw.Guards.Tests\Throw.Guards.Tests.csproj", "{347FD7FB-2182-47A7-A3AA-40F6FAE91E8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Throw.Guards.Tests", "guards\Throw.Guards.Tests\Throw.Guards.Tests.csproj", "{347FD7FB-2182-47A7-A3AA-40F6FAE91E8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Throw.Guards", "guards\Throw.Guards\Throw.Guards.csproj", "{EF590BE1-C5F8-45D3-B5F1-5A25C449095C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Throw.Guards", "guards\Throw.Guards\Throw.Guards.csproj", "{EF590BE1-C5F8-45D3-B5F1-5A25C449095C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

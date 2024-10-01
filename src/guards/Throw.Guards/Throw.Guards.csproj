@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <!-- Project -->
   <PropertyGroup Label="project">
@@ -38,12 +38,14 @@
     <Company>OwlDomain</Company>
 
     <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageLicenseFile>license.md</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/Owl-Domain/Common.Throw</PackageProjectUrl>
   </PropertyGroup>
-  
-  <!-- Readme -->
-  <ItemGroup Label="readme">
+
+  <!-- Resources -->
+  <ItemGroup Label="resources">
     <None Include="readme.md" Pack="true" PackagePath="\" />
+    <None Include="../../../license.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <!-- Repository -->
