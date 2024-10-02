@@ -1,5 +1,3 @@
-﻿global using System.Collections.Generic;
-global using System.Diagnostics.CodeAnalysis;
 global using Microsoft.VisualStudio.TestTools.UnitTesting;
 global using OwlDomain.Testing.Assertions;
 global using Assert = OwlDomain.Testing.MSTest.Assert;
