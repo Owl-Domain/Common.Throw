@@ -24,7 +24,7 @@
     <Description>A package that contains the base functionality for an easily extensible throw-helper utility.</Description>
     <PackageTags>owldomain, throwing, throw-helper</PackageTags>
 
-    <Version>1.1.0</Version>
+    <Version>2.0.0</Version>
 
     <Authors>Owl Domain, Nightowl</Authors>
     <Company>OwlDomain</Company>
