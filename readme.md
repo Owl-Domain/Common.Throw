@@ -34,20 +34,20 @@ easy to add/replace the throw and guard methods.
 
 To use this package download the [latest release files](https://github.com/Owl-Domain/Common.Throw/releases/tag/v1.0.0-throw),
 and add them to a 
-[local NuGet feed](https://learn.microsoft.com/nuget/hosting-packages/local-feeds),
-after that you can reference it from your .NET project.
-An official [nuget.org](https://www.nuget.org/) package will be released at a later point in time.
+[local NuGet feed](https://learn.microsoft.com/nuget/hosting-packages/local-feeds), or
+use the latest [nuget.org](https://www.nuget.org/packages/owlDomain.Common.Throw) release,
+then just reference it from your .NET project.
 
 In C#, that would look like this:
 ```csproj
 <ItemGroup>
-  <PackageReference Include="OwlDomain.Common.Throw" Version="1.0.0" />
+  <PackageReference Include="OwlDomain.Common.Throw" Version="2.0.0" />
 </ItemGroup>
 ```
 or 
 ```csproj
 <ItemGroup>
-  <PackageReference Include="OwlDomain.Common.Throw.Guards" Version="1.0.0" />
+  <PackageReference Include="OwlDomain.Common.Throw.Guards" Version="2.0.1" />
 </ItemGroup>
 ```
 depending on your needs.
@@ -85,11 +85,11 @@ return Throw.ForArgument<int>("message", "parameterName");
 
 
 
-## Usage - Guard methods
+## Usage - Argument guard methods
 
 Using the provided packages is extremely simple, after referencing them from your project
 simply use the `OwlDomain.Common` namespace, which will provide you access to the static
-`Throw` class, which provides the static property `If`, on which you will have
+`Throw` class, which provides the static property `IfArgument`, on which you will have
 access to all of the guard extension methods for conditionally throwing exceptions.
 
 An example of this would be:
@@ -98,7 +98,7 @@ using OwlDomain.Common;
 
 void Foo(int index)
 {
-   Throw.If.IsFalse(index >= 0);
+   Throw.IfArgument.IsTooLow(index, 0);
 }
 ```
 

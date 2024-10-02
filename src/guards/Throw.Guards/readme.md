@@ -13,7 +13,7 @@ if you wish to do so check out the `OwlDomain.Common.Throw.Base` package.
 
 Using the provided packages is extremely simple, after referencing them from your project
 simply use the `OwlDomain.Common` namespace, which will provide you access to the static
-`Throw` class, which provides the static property `If`, on which you will have
+`Throw` class, which provides the static property `IfArgument`, on which you will have
 access to all of the guard extension methods for conditionally throwing exceptions.
 
 An example of this would be:
@@ -22,7 +22,7 @@ using OwlDomain.Common;
 
 void Foo(int index)
 {
-   Throw.If.IsFalse(index >= 0);
+   Throw.IfArgument.IsTooLow(index, 0);
 }
 ```
 
