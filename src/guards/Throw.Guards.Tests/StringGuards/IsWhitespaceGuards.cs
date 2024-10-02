@@ -13,7 +13,7 @@ public sealed class IsWhitespaceGuards
       const string expectedParameterName = nameof(value);
 
       // Act
-      void Act() => Throw.If.IsWhitespace(value);
+      void Act() => Throw.IfArgument.IsWhitespace(value);
 
       // Assert
       Assert.That
@@ -27,7 +27,7 @@ public sealed class IsWhitespaceGuards
    public void IsWhitespace_WithNonWhitespaceValue_DoesNothing(string value)
    {
       // Act
-      void Act() => Throw.If.IsWhitespace(value);
+      void Act() => Throw.IfArgument.IsWhitespace(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -42,7 +42,7 @@ public sealed class IsWhitespaceGuards
       const string expectedParameterName = nameof(value);
 
       // Act
-      void Act() => Throw.If.IsNotWhitespace(value);
+      void Act() => Throw.IfArgument.IsNotWhitespace(value);
 
       // Assert
       Assert.That
@@ -56,7 +56,7 @@ public sealed class IsWhitespaceGuards
    public void IsNotWhitespace_WithWhitespaceValue_DoesNothing(string value)
    {
       // Act
-      void Act() => Throw.If.IsNotWhitespace(value);
+      void Act() => Throw.IfArgument.IsNotWhitespace(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);

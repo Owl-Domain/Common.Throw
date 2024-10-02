@@ -5,15 +5,15 @@ public static partial class GuardExtensions
    #region HasFlag methods
    /// <summary>Throws the <see cref="ArgumentException"/> if the given <paramref name="value"/> has the given <paramref name="flag"/> set.</summary>
    /// <typeparam name="T">The type of the <see langword="enum"/> that is used for the <paramref name="value"/> and the <paramref name="flag"/>.</typeparam>
-   /// <param name="throw">An instance of the <see cref="IThrowIf"/> interface used to access the guard extension method.</param>
+   /// <param name="throw">An instance of the <see cref="IThrowIfArgument"/> interface used to access the guard extension method.</param>
    /// <param name="value">The value to check.</param>
    /// <param name="flag">The flag to check on the given <paramref name="value"/>.</param>
    /// <param name="valueArgument">The argument expression that was passed in as the <paramref name="value"/>.</param>
    /// <param name="flagArgument">The argument expression that was passed in as the <paramref name="flag"/>.</param>
    /// <returns>The value passed in as the <paramref name="throw"/> argument to use for chaining guard methods.</returns>
    /// <exception cref="ArgumentException">Thrown if the given <paramref name="value"/> has the given <paramref name="flag"/> set.</exception>
-   public static IThrowIf HasFlag<T>(
-      this IThrowIf @throw,
+   public static IThrowIfArgument HasFlag<T>(
+      this IThrowIfArgument @throw,
       [DisallowNull] T? value,
       [DisallowNull] T? flag,
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>",
@@ -26,9 +26,9 @@ public static partial class GuardExtensions
       return @throw;
    }
 
-   /// <inheritdoc cref="HasFlag{T}(IThrowIf, T?, T?, string, string)"/>
-   public static IThrowIf HasFlag<T>(
-      this IThrowIf @throw,
+   /// <inheritdoc cref="HasFlag{T}(IThrowIfArgument, T?, T?, string, string)"/>
+   public static IThrowIfArgument HasFlag<T>(
+      this IThrowIfArgument @throw,
       [DisallowNull] T value,
       [DisallowNull] T flag,
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>",
@@ -45,15 +45,15 @@ public static partial class GuardExtensions
    #region DoesNotHaveFlag methods
    /// <summary>Throws the <see cref="ArgumentException"/> if the given <paramref name="value"/> did not the given <paramref name="flag"/> set.</summary>
    /// <typeparam name="T">The type of the <see langword="enum"/> that is used for the <paramref name="value"/> and the <paramref name="flag"/>.</typeparam>
-   /// <param name="throw">An instance of the <see cref="IThrowIf"/> interface used to access the guard extension method.</param>
+   /// <param name="throw">An instance of the <see cref="IThrowIfArgument"/> interface used to access the guard extension method.</param>
    /// <param name="value">The value to check.</param>
    /// <param name="flag">The flag to check on the given <paramref name="value"/>.</param>
    /// <param name="valueArgument">The argument expression that was passed in as the <paramref name="value"/>.</param>
    /// <param name="flagArgument">The argument expression that was passed in as the <paramref name="flag"/>.</param>
    /// <returns>The value passed in as the <paramref name="throw"/> argument to use for chaining guard methods.</returns>
    /// <exception cref="ArgumentException">Thrown if the given <paramref name="value"/> did not the given <paramref name="flag"/> set.</exception>
-   public static IThrowIf DoesNotHaveFlag<T>(
-      this IThrowIf @throw,
+   public static IThrowIfArgument DoesNotHaveFlag<T>(
+      this IThrowIfArgument @throw,
       [DisallowNull] T? value,
       [DisallowNull] T? flag,
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>",
@@ -66,9 +66,9 @@ public static partial class GuardExtensions
       return @throw;
    }
 
-   /// <inheritdoc cref="DoesNotHaveFlag{T}(IThrowIf, T?, T?, string, string)"/>
-   public static IThrowIf DoesNotHaveFlag<T>(
-      this IThrowIf @throw,
+   /// <inheritdoc cref="DoesNotHaveFlag{T}(IThrowIfArgument, T?, T?, string, string)"/>
+   public static IThrowIfArgument DoesNotHaveFlag<T>(
+      this IThrowIfArgument @throw,
       [DisallowNull] T value,
       [DisallowNull] T flag,
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>",
@@ -85,13 +85,13 @@ public static partial class GuardExtensions
    #region IsDefined methods
    /// <summary>Throws the <see cref="ArgumentException"/> if the given <paramref name="value"/> is defined in the enum of the type <typeparamref name="T"/>.</summary>
    /// <typeparam name="T">The type of the <see langword="enum"/> that is used for the <paramref name="value"/>.</typeparam>
-   /// <param name="throw">An instance of the <see cref="IThrowIf"/> interface used to access the guard extension method.</param>
+   /// <param name="throw">An instance of the <see cref="IThrowIfArgument"/> interface used to access the guard extension method.</param>
    /// <param name="value">The value to check.</param>
    /// <param name="valueArgument">The argument expression that was passed in as the <paramref name="value"/>.</param>
    /// <returns>The value passed in as the <paramref name="throw"/> argument to use for chaining guard methods.</returns>
    /// <exception cref="ArgumentException">Thrown if the given <paramref name="value"/> is defined in the enum of the type <typeparamref name="T"/>.</exception>
-   public static IThrowIf IsDefined<T>(
-      this IThrowIf @throw,
+   public static IThrowIfArgument IsDefined<T>(
+      this IThrowIfArgument @throw,
       [DisallowNull] T? value,
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>")
       where T : struct, Enum
@@ -106,9 +106,9 @@ public static partial class GuardExtensions
       return @throw;
    }
 
-   /// <inheritdoc cref="IsDefined{T}(IThrowIf, T?, string)"/>
-   public static IThrowIf IsDefined<T>(
-      this IThrowIf @throw,
+   /// <inheritdoc cref="IsDefined{T}(IThrowIfArgument, T?, string)"/>
+   public static IThrowIfArgument IsDefined<T>(
+      this IThrowIfArgument @throw,
       [DisallowNull] T value,
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>")
       where T : struct, Enum
@@ -127,13 +127,13 @@ public static partial class GuardExtensions
    #region IsNotDefined methods
    /// <summary>Throws the <see cref="ArgumentException"/> if the given <paramref name="value"/> is not defined in the enum of the type <typeparamref name="T"/>.</summary>
    /// <typeparam name="T">The type of the <see langword="enum"/> that is used for the <paramref name="value"/>.</typeparam>
-   /// <param name="throw">An instance of the <see cref="IThrowIf"/> interface used to access the guard extension method.</param>
+   /// <param name="throw">An instance of the <see cref="IThrowIfArgument"/> interface used to access the guard extension method.</param>
    /// <param name="value">The value to check.</param>
    /// <param name="valueArgument">The argument expression that was passed in as the <paramref name="value"/>.</param>
    /// <returns>The value passed in as the <paramref name="throw"/> argument to use for chaining guard methods.</returns>
    /// <exception cref="ArgumentException">Thrown if the given <paramref name="value"/> is not defined in the enum of the type <typeparamref name="T"/>.</exception>
-   public static IThrowIf IsNotDefined<T>(
-      this IThrowIf @throw,
+   public static IThrowIfArgument IsNotDefined<T>(
+      this IThrowIfArgument @throw,
       [DisallowNull] T? value,
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>")
       where T : struct, Enum
@@ -148,9 +148,9 @@ public static partial class GuardExtensions
       return @throw;
    }
 
-   /// <inheritdoc cref="IsNotDefined{T}(IThrowIf, T?, string)"/>
-   public static IThrowIf IsNotDefined<T>(
-      this IThrowIf @throw,
+   /// <inheritdoc cref="IsNotDefined{T}(IThrowIfArgument, T?, string)"/>
+   public static IThrowIfArgument IsNotDefined<T>(
+      this IThrowIfArgument @throw,
       [DisallowNull] T value,
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>")
       where T : struct, Enum

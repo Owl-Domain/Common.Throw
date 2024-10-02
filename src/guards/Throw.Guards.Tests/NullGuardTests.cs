@@ -11,7 +11,7 @@ public sealed class NullGuardTests
       object? value = null;
 
       // Act
-      void Act() => Throw.If.IsNull(value);
+      void Act() => Throw.IfArgument.IsNull(value);
 
       // Assert
       Assert.That.ThrowsExactException<ArgumentNullException>(Act);
@@ -24,7 +24,7 @@ public sealed class NullGuardTests
       object? value = new();
 
       // Act
-      void Act() => Throw.If.IsNull(value);
+      void Act() => Throw.IfArgument.IsNull(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -37,7 +37,7 @@ public sealed class NullGuardTests
       object? value = null;
 
       // Act
-      void Act() => Throw.If.IsNotNull(value);
+      void Act() => Throw.IfArgument.IsNotNull(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -50,7 +50,7 @@ public sealed class NullGuardTests
       object? value = new();
 
       // Act
-      void Act() => Throw.If.IsNotNull(value);
+      void Act() => Throw.IfArgument.IsNotNull(value);
 
       // Assert
       Assert.That.ThrowsExactException<ArgumentException>(Act);
@@ -65,7 +65,7 @@ public sealed class NullGuardTests
       int? value = null;
 
       // Act
-      void Act() => Throw.If.IsNull(value);
+      void Act() => Throw.IfArgument.IsNull(value);
 
       // Assert
       Assert.That.ThrowsExactException<ArgumentNullException>(Act);
@@ -78,7 +78,7 @@ public sealed class NullGuardTests
       int? value = 1;
 
       // Act
-      void Act() => Throw.If.IsNull(value);
+      void Act() => Throw.IfArgument.IsNull(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -91,7 +91,7 @@ public sealed class NullGuardTests
       int? value = null;
 
       // Act
-      void Act() => Throw.If.IsNotNull(value);
+      void Act() => Throw.IfArgument.IsNotNull(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -104,7 +104,7 @@ public sealed class NullGuardTests
       int? value = 1;
 
       // Act
-      void Act() => Throw.If.IsNotNull(value);
+      void Act() => Throw.IfArgument.IsNotNull(value);
 
       // Assert
       Assert.That.ThrowsExactException<ArgumentException>(Act);

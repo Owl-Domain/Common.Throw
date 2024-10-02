@@ -24,7 +24,7 @@ public sealed class EnumGuardTests
       const TestEnum value = TestEnum.A | flag;
 
       // Act
-      static void Act() => Throw.If.HasFlag(value, flag);
+      static void Act() => Throw.IfArgument.HasFlag(value, flag);
 
       // Assert
       Assert.That.ThrowsExactException<ArgumentException>(Act);
@@ -38,7 +38,7 @@ public sealed class EnumGuardTests
       TestEnum? value = TestEnum.A;
 
       // Act
-      void Act() => Throw.If.HasFlag(value, flag);
+      void Act() => Throw.IfArgument.HasFlag(value, flag);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -52,7 +52,7 @@ public sealed class EnumGuardTests
       TestEnum? value = TestEnum.A | flag;
 
       // Act
-      void Act() => Throw.If.HasFlag(value, flag);
+      void Act() => Throw.IfArgument.HasFlag(value, flag);
 
       // Assert
       Assert.That.ThrowsExactException<ArgumentException>(Act);
@@ -66,7 +66,7 @@ public sealed class EnumGuardTests
       const TestEnum value = TestEnum.A;
 
       // Act
-      static void Act() => Throw.If.HasFlag(value, flag);
+      static void Act() => Throw.IfArgument.HasFlag(value, flag);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -82,7 +82,7 @@ public sealed class EnumGuardTests
       TestEnum? value = TestEnum.A;
 
       // Act
-      void Act() => Throw.If.DoesNotHaveFlag(value, flag);
+      void Act() => Throw.IfArgument.DoesNotHaveFlag(value, flag);
 
       // Assert
       Assert.That.ThrowsExactException<ArgumentException>(Act);
@@ -96,7 +96,7 @@ public sealed class EnumGuardTests
       TestEnum? value = TestEnum.A | flag;
 
       // Act
-      void Act() => Throw.If.DoesNotHaveFlag(value, flag);
+      void Act() => Throw.IfArgument.DoesNotHaveFlag(value, flag);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -110,7 +110,7 @@ public sealed class EnumGuardTests
       const TestEnum value = TestEnum.A;
 
       // Act
-      static void Act() => Throw.If.DoesNotHaveFlag(value, flag);
+      static void Act() => Throw.IfArgument.DoesNotHaveFlag(value, flag);
 
       // Assert
       Assert.That.ThrowsExactException<ArgumentException>(Act);
@@ -124,7 +124,7 @@ public sealed class EnumGuardTests
       const TestEnum value = TestEnum.A | flag;
 
       // Act
-      static void Act() => Throw.If.DoesNotHaveFlag(value, flag);
+      static void Act() => Throw.IfArgument.DoesNotHaveFlag(value, flag);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -139,7 +139,7 @@ public sealed class EnumGuardTests
       TestEnum? value = TestEnum.A;
 
       // Act
-      void Act() => Throw.If.IsDefined(value);
+      void Act() => Throw.IfArgument.IsDefined(value);
 
       // Assert
       Assert.That.ThrowsExactException<ArgumentException>(Act);
@@ -152,7 +152,7 @@ public sealed class EnumGuardTests
       TestEnum? value = (TestEnum)5;
 
       // Act
-      void Act() => Throw.If.IsDefined(value);
+      void Act() => Throw.IfArgument.IsDefined(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -165,7 +165,7 @@ public sealed class EnumGuardTests
       const TestEnum value = TestEnum.A;
 
       // Act
-      static void Act() => Throw.If.IsDefined(value);
+      static void Act() => Throw.IfArgument.IsDefined(value);
 
       // Assert
       Assert.That.ThrowsExactException<ArgumentException>(Act);
@@ -178,7 +178,7 @@ public sealed class EnumGuardTests
       const TestEnum value = (TestEnum)5;
 
       // Act
-      static void Act() => Throw.If.IsDefined(value);
+      static void Act() => Throw.IfArgument.IsDefined(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -193,7 +193,7 @@ public sealed class EnumGuardTests
       TestEnum? value = (TestEnum)5;
 
       // Act
-      void Act() => Throw.If.IsNotDefined(value);
+      void Act() => Throw.IfArgument.IsNotDefined(value);
 
       // Assert
       Assert.That.ThrowsExactException<ArgumentException>(Act);
@@ -206,7 +206,7 @@ public sealed class EnumGuardTests
       TestEnum? value = TestEnum.A;
 
       // Act
-      void Act() => Throw.If.IsNotDefined(value);
+      void Act() => Throw.IfArgument.IsNotDefined(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -219,7 +219,7 @@ public sealed class EnumGuardTests
       const TestEnum value = (TestEnum)5;
 
       // Act
-      static void Act() => Throw.If.IsNotDefined(value);
+      static void Act() => Throw.IfArgument.IsNotDefined(value);
 
       // Assert
       Assert.That.ThrowsExactException<ArgumentException>(Act);
@@ -232,7 +232,7 @@ public sealed class EnumGuardTests
       const TestEnum value = TestEnum.A;
 
       // Act
-      static void Act() => Throw.If.IsNotDefined(value);
+      static void Act() => Throw.IfArgument.IsNotDefined(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);

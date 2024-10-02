@@ -12,7 +12,7 @@ public sealed class IsEmptyGuards
       const string expectedParameterName = nameof(value);
 
       // Act
-      void Act() => Throw.If.IsEmpty(value);
+      void Act() => Throw.IfArgument.IsEmpty(value);
 
       // Assert
       Assert.That
@@ -27,7 +27,7 @@ public sealed class IsEmptyGuards
    public void IsEmpty_WithNonEmptyValue_DoesNothing(string value)
    {
       // Act
-      void Act() => Throw.If.IsEmpty(value);
+      void Act() => Throw.IfArgument.IsEmpty(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -43,7 +43,7 @@ public sealed class IsEmptyGuards
       const string expectedParameterName = nameof(value);
 
       // Act
-      void Act() => Throw.If.IsNotEmpty(value);
+      void Act() => Throw.IfArgument.IsNotEmpty(value);
 
       // Assert
       Assert.That
@@ -58,7 +58,7 @@ public sealed class IsEmptyGuards
       string value = string.Empty;
 
       // Act
-      void Act() => Throw.If.IsNotEmpty(value);
+      void Act() => Throw.IfArgument.IsNotEmpty(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);

@@ -12,7 +12,7 @@ public sealed class BooleanExpressionGuardTests
       const string expectedParameterName = nameof(value);
 
       // Act
-      void Act() => Throw.If.IsExpressionTrue(value, expectedParameterName);
+      void Act() => Throw.IfArgument.IsExpressionTrue(value, expectedParameterName);
 
       // Assert
       Assert.That
@@ -26,7 +26,7 @@ public sealed class BooleanExpressionGuardTests
    public void IsExpressionTrue_WithNotTrueValue_DoesNothing(bool? value)
    {
       // Act
-      void Act() => Throw.If.IsExpressionTrue(value, nameof(value));
+      void Act() => Throw.IfArgument.IsExpressionTrue(value, nameof(value));
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -39,7 +39,7 @@ public sealed class BooleanExpressionGuardTests
       bool? value = true;
 
       // Act
-      void Act() => Throw.If.IsExpressionNotTrue(value, nameof(value));
+      void Act() => Throw.IfArgument.IsExpressionNotTrue(value, nameof(value));
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -54,7 +54,7 @@ public sealed class BooleanExpressionGuardTests
       const string expectedParameterName = nameof(value);
 
       // Act
-      void Act() => Throw.If.IsExpressionNotTrue(value, expectedParameterName);
+      void Act() => Throw.IfArgument.IsExpressionNotTrue(value, expectedParameterName);
 
       // Assert
       Assert.That
@@ -72,7 +72,7 @@ public sealed class BooleanExpressionGuardTests
       const string expectedParameterName = nameof(value);
 
       // Act
-      void Act() => Throw.If.IsExpressionFalse(value, expectedParameterName);
+      void Act() => Throw.IfArgument.IsExpressionFalse(value, expectedParameterName);
 
       // Assert
       Assert.That
@@ -86,7 +86,7 @@ public sealed class BooleanExpressionGuardTests
    public void IsExpressionFalse_WithNotTrueValue_DoesNothing(bool? value)
    {
       // Act
-      void Act() => Throw.If.IsExpressionFalse(value, nameof(value));
+      void Act() => Throw.IfArgument.IsExpressionFalse(value, nameof(value));
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -99,7 +99,7 @@ public sealed class BooleanExpressionGuardTests
       bool? value = false;
 
       // Act
-      void Act() => Throw.If.IsExpressionNotFalse(value, nameof(value));
+      void Act() => Throw.IfArgument.IsExpressionNotFalse(value, nameof(value));
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -114,7 +114,7 @@ public sealed class BooleanExpressionGuardTests
       const string expectedParameterName = nameof(value);
 
       // Act
-      void Act() => Throw.If.IsExpressionNotFalse(value, nameof(value));
+      void Act() => Throw.IfArgument.IsExpressionNotFalse(value, nameof(value));
 
       // Assert
       Assert.That

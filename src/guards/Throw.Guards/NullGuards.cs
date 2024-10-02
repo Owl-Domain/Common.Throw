@@ -4,13 +4,13 @@ public static partial class GuardExtensions
 {
    #region Methods
    /// <summary>Throws the <see cref="ArgumentNullException"/> if the given <paramref name="value"/> is <see langword="null"/>.</summary>
-   /// <param name="throw">An instance of the <see cref="IThrowIf"/> interface used to access the guard extension method.</param>
+   /// <param name="throw">An instance of the <see cref="IThrowIfArgument"/> interface used to access the guard extension method.</param>
    /// <param name="value">The value to check.</param>
    /// <param name="valueArgument">The argument expression that was passed in as the <paramref name="value"/>.</param>
    /// <returns>The value passed in as the <paramref name="throw"/> argument to use for chaining guard methods.</returns>
    /// <exception cref="ArgumentNullException">Thrown if the given <paramref name="value"/> is <see langword="null"/>.</exception>
-   public static IThrowIf IsNull(
-      this IThrowIf @throw,
+   public static IThrowIfArgument IsNull(
+      this IThrowIfArgument @throw,
       [NotNull] object? value,
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>")
    {
@@ -22,13 +22,13 @@ public static partial class GuardExtensions
 
    /// <summary>Throws the <see cref="ArgumentNullException"/> if the given <paramref name="value"/> is <see langword="null"/>.</summary>
    /// <typeparam name="T">The type of the given <paramref name="value"/>, must be a <see langword="struct"/>.</typeparam>
-   /// <param name="throw">An instance of the <see cref="IThrowIf"/> interface used to access the guard extension method.</param>
+   /// <param name="throw">An instance of the <see cref="IThrowIfArgument"/> interface used to access the guard extension method.</param>
    /// <param name="value">The value to check.</param>
    /// <param name="valueArgument">The argument expression that was passed in as the <paramref name="value"/>.</param>
    /// <returns>The value passed in as the <paramref name="throw"/> argument to use for chaining guard methods.</returns>
    /// <exception cref="ArgumentNullException">Thrown if the given <paramref name="value"/> is <see langword="null"/>.</exception>
-   public static IThrowIf IsNull<T>(
-      this IThrowIf @throw,
+   public static IThrowIfArgument IsNull<T>(
+      this IThrowIfArgument @throw,
       [NotNull] T? value,
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>")
       where T : struct
@@ -40,13 +40,13 @@ public static partial class GuardExtensions
    }
 
    /// <summary>Throws the <see cref="ArgumentException"/> if the given <paramref name="value"/> is not <see langword="null"/>.</summary>
-   /// <param name="throw">An instance of the <see cref="IThrowIf"/> interface used to access the guard extension method.</param>
+   /// <param name="throw">An instance of the <see cref="IThrowIfArgument"/> interface used to access the guard extension method.</param>
    /// <param name="value">The value to check.</param>
    /// <param name="valueArgument">The argument expression that was passed in as the <paramref name="value"/>.</param>
    /// <returns>The value passed in as the <paramref name="throw"/> argument to use for chaining guard methods.</returns>
    /// <exception cref="ArgumentException">Thrown if the given <paramref name="value"/> is not <see langword="null"/>.</exception>
-   public static IThrowIf IsNotNull(
-      this IThrowIf @throw,
+   public static IThrowIfArgument IsNotNull(
+      this IThrowIfArgument @throw,
       object? value,
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>")
    {
@@ -58,13 +58,13 @@ public static partial class GuardExtensions
 
    /// <summary>Throws the <see cref="ArgumentException"/> if the given <paramref name="value"/> is not <see langword="null"/>.</summary>
    /// <typeparam name="T">The type of the given <paramref name="value"/>, must be a <see langword="struct"/>.</typeparam>
-   /// <param name="throw">An instance of the <see cref="IThrowIf"/> interface used to access the guard extension method.</param>
+   /// <param name="throw">An instance of the <see cref="IThrowIfArgument"/> interface used to access the guard extension method.</param>
    /// <param name="value">The value to check.</param>
    /// <param name="valueArgument">The argument expression that was passed in as the <paramref name="value"/>.</param>
    /// <returns>The value passed in as the <paramref name="throw"/> argument to use for chaining guard methods.</returns>
    /// <exception cref="ArgumentException">Thrown if the given <paramref name="value"/> is not <see langword="null"/>.</exception>
-   public static IThrowIf IsNotNull<T>(
-      this IThrowIf @throw,
+   public static IThrowIfArgument IsNotNull<T>(
+      this IThrowIfArgument @throw,
       T? value,
       [CallerArgumentExpression(nameof(value))] string valueArgument = "<value>")
       where T : struct

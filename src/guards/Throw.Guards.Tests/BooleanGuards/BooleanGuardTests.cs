@@ -12,7 +12,7 @@ public sealed class BooleanGuardTests
       const string expectedParameterName = nameof(value);
 
       // Act
-      void Act() => Throw.If.IsTrue(value);
+      void Act() => Throw.IfArgument.IsTrue(value);
 
       // Assert
       Assert.That
@@ -26,7 +26,7 @@ public sealed class BooleanGuardTests
    public void IsTrue_WithNotTrueValue_DoesNothing(bool? value)
    {
       // Act
-      void Act() => Throw.If.IsTrue(value);
+      void Act() => Throw.IfArgument.IsTrue(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -39,7 +39,7 @@ public sealed class BooleanGuardTests
       bool? value = true;
 
       // Act
-      void Act() => Throw.If.IsNotTrue(value);
+      void Act() => Throw.IfArgument.IsNotTrue(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -54,7 +54,7 @@ public sealed class BooleanGuardTests
       const string expectedParameterName = nameof(value);
 
       // Act
-      void Act() => Throw.If.IsNotTrue(value);
+      void Act() => Throw.IfArgument.IsNotTrue(value);
 
       // Assert
       Assert.That
@@ -72,7 +72,7 @@ public sealed class BooleanGuardTests
       const string expectedParameterName = nameof(value);
 
       // Act
-      void Act() => Throw.If.IsFalse(value);
+      void Act() => Throw.IfArgument.IsFalse(value);
 
       // Assert
       Assert.That
@@ -86,7 +86,7 @@ public sealed class BooleanGuardTests
    public void IsFalse_WithNotTrueValue_DoesNothing(bool? value)
    {
       // Act
-      void Act() => Throw.If.IsFalse(value);
+      void Act() => Throw.IfArgument.IsFalse(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -99,7 +99,7 @@ public sealed class BooleanGuardTests
       bool? value = false;
 
       // Act
-      void Act() => Throw.If.IsNotFalse(value);
+      void Act() => Throw.IfArgument.IsNotFalse(value);
 
       // Assert
       Assert.That.DoesNotThrowAnyException(Act);
@@ -114,7 +114,7 @@ public sealed class BooleanGuardTests
       const string expectedParameterName = nameof(value);
 
       // Act
-      void Act() => Throw.If.IsNotFalse(value);
+      void Act() => Throw.IfArgument.IsNotFalse(value);
 
       // Assert
       Assert.That
