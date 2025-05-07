@@ -1,6 +1,10 @@
 Common.Throw
 ===
 
+> [!WARNING]
+> This project has been deprecated!
+> [OwlDomain.Common](https://github.com/Owl-Domain/Common) should be used instead.
+
 A package that provides non-inlinable helper methods for throwing 
 different exceptions, meant to reduce the compiled code size, 
 and for helper guard methods for conditionally throwing exceptions.
